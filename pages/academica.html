@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Información Académica e Institucional — Institución Educativa Buchadó Fernando Botero Angulo</title>
     <meta name="description"
-        content="Proyecto Educativo Institucional (PEI), calendario institucional, proceso de matrícula y acceso a SEDUCA de la Institución Educativa Buchadó Fernando Botero Angulo.">
+        content="Proyecto Educativo Institucional (PEI), Básica Primaria, calendario institucional, proceso de matrícula y acceso a SEDUCA de la Institución Educativa Buchadó Fernando Botero Angulo.">
     <link rel="canonical" href="/pages/academica.html">
 
     <meta property="og:type" content="website">
@@ -39,7 +39,7 @@
             <div class="container">
                 <span class="eyebrow" style="color:#eafff2">Comunidad educativa</span>
                 <h1>Información Académica e Institucional</h1>
-                <p>Proyecto Educativo Institucional, calendario institucional, proceso de matrícula y acceso a la
+                <p>Proyecto Educativo Institucional, Básica Primaria, calendario institucional, proceso de matrícula y acceso a la
                     Secretaría de Educación de Antioquia (SEDUCA).</p>
             </div>
         </section>
@@ -100,8 +100,36 @@
             </div>
         </section>
 
+        <!-- BÁSICA PRIMARIA -->
+        <section class="section" id="basica-primaria" style="background:var(--color-surface)">
+            <div class="container">
+                <div class="primary-level">
+                    <div class="primary-level-intro">
+                        <span class="eyebrow">Niveles educativos</span>
+                        <h2>Básica Primaria</h2>
+                        <p>En Básica Primaria, la institución cuenta con <strong>docentes monodocentes</strong>:
+                            un mismo docente orienta todas las áreas del plan de estudios de este nivel, en lugar de
+                            una asignatura específica.</p>
+                        <span class="badge badge--secondary">Básica Primaria — Docente monodocente</span>
+                    </div>
+                    <figure class="primary-level-photo">
+                        <img src="/assets/images/comunidad/estudiante-escribiendo.jpg"
+                            alt="Estudiante de primaria resolviendo una guía de trabajo en su pupitre" loading="lazy">
+                    </figure>
+                </div>
+
+                <div class="teachers-grid primary-level-grid" id="primaryTeachers"></div>
+
+                <p class="pending-note">
+                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                    Los docentes de áreas específicas, orientación y programas se encuentran en
+                    <a href="/pages/docentes.html">Personal Docente</a>.
+                </p>
+            </div>
+        </section>
+
         <!-- CALENDARIO INSTITUCIONAL -->
-        <section class="section" id="calendario" style="background:var(--color-surface)">
+        <section class="section" id="calendario">
             <div class="container">
                 <div class="section-header section-header--accent">
                     <span class="eyebrow">Planeación escolar</span>
@@ -142,7 +170,7 @@
         </section>
 
         <!-- PROCESO DE MATRÍCULA -->
-        <section class="section" id="matricula">
+        <section class="section" id="matricula" style="background:var(--color-surface)">
             <div class="container">
                 <div class="section-header section-header--accent">
                     <span class="eyebrow">Admisiones</span>
@@ -203,6 +231,8 @@
 
     <script src="/js/layout.js"></script>
     <script src="/js/navigation.js"></script>
+    <script src="/js/data/docentes.js"></script>
+    <script src="/js/academica.js"></script>
 </body>
 
 </html>

@@ -20,14 +20,16 @@ buchado-colegio/
 ├── index.html              → Página de inicio
 ├── pages/
 │   ├── identidad.html      → Nuestra Identidad (historia, valores, sedes)
-│   ├── docentes.html       → Personal Docente (filtros por sede/área)
+│   ├── docentes.html       → Personal Docente (agrupado por nivel/área, filtro por área)
 │   ├── eventos.html        → Eventos y Centros de Interés
-│   ├── academica.html      → Información Académica e Institucional (PEI, calendario, matrícula, SEDUCA)
+│   ├── academica.html      → Información Académica e Institucional (PEI, Básica Primaria, calendario, matrícula, SEDUCA)
 │   └── contacto.html       → Contacto (formulario, canales, dependencias)
 ├── assets/
 │   ├── images/
 │   │   ├── logo/            → Logo y escudo institucional
-│   │   └── institucional/   → Fotografías institucionales y logos de aliados
+│   │   ├── institucional/   → Logos de aliados
+│   │   ├── sedes/           → Fotografías reales de las tres sedes
+│   │   └── comunidad/       → Fotografías reales de estudiantes y actividades
 │   └── icons/               → Iconos propios (ícono de teléfono, etc.)
 ├── css/
 │   ├── base.css             → Reset, variables de diseño, tipografía, utilidades
@@ -43,7 +45,10 @@ buchado-colegio/
 │   ├── navigation.js        → Menú móvil, submenús, header fijo, barra de progreso
 │   ├── home.js               → Contadores y animaciones de la página de inicio
 │   ├── identidad.js         → Contadores animados y acordeón de valores
-│   ├── docentes.js          → Filtros de personal docente por sede/área
+│   ├── data/
+│   │   └── docentes.js      → Fuente única de datos del personal docente + tarjeta compartida
+│   ├── docentes.js          → Agrupación y filtro del personal docente
+│   ├── academica.js         → Docentes monodocentes en la sección Básica Primaria
 │   ├── events.js            → Contador, filtros y galería con lightbox
 │   ├── contact.js           → Validación y envío del formulario de contacto
 │   └── utils/
@@ -113,13 +118,13 @@ honeypot en el servidor` → `Resend` → `correo`.
 
 ## Estado del proyecto / próximos pasos
 
-- Las fotografías de las sedes, eventos, galería y el rector son
-  marcadores de posición (se reutilizan fotos institucionales disponibles,
-  o un ícono cuando no aplica una foto real) hasta contar con material
-  oficial.
-- El directorio de "Personal Docente" está listo técnicamente (filtros,
-  tarjetas) pero sin registros hasta que la institución confirme nombres,
-  correos autorizados, sedes y áreas.
+- Las fotografías de inicio, sedes, eventos y galería son fotos reales
+  entregadas por la institución. Las tarjetas de eventos/noticias sin foto
+  adecuada (olimpiadas, día de la familia) usan el escudo institucional.
+  El rector aún no tiene fotografía (se muestra un ícono).
+- El personal docente proviene del documento oficial de docentes
+  (`js/data/docentes.js`). El documento no indica la sede de cada docente;
+  cuando la institución la confirme, se agrega el campo `sede` al registro.
 - El PEI, el calendario institucional y el proceso de matrícula muestran
   su estructura lista para publicarse; el contenido específico y las
   fechas quedan marcados como pendientes de confirmación.

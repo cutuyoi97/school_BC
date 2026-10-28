@@ -34,6 +34,7 @@
             id: "academica", href: "/pages/academica.html", label: "Información Académica", icon: "fa-graduation-cap",
             children: [
                 { href: "/pages/academica.html#pei", label: "Proyecto Educativo Institucional" },
+                { href: "/pages/academica.html#basica-primaria", label: "Básica Primaria" },
                 { href: "/pages/academica.html#calendario", label: "Calendario institucional" },
                 { href: "/pages/academica.html#matricula", label: "Proceso de matrícula" },
                 { href: "https://www.seduca.gov.co/", label: "SEDUCA", external: true },

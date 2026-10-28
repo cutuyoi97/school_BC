@@ -1,78 +1,58 @@
 /**
- * Personal Docente: estructura de datos y filtros por sede/área.
- * Agrega aquí cada docente autorizado por la institución. Forma esperada:
- * { name, email, sede: "principal"|"san-miguel"|"arenal", areas: ["ciencias-basicas", ...] }
+ * Personal Docente: agrupación por nivel/área y filtro por área académica.
+ * Los datos viven en /js/data/docentes.js (TEACHERS, TEACHER_GROUPS, TEACHER_AREAS, teacherCard).
  */
 
-const TEACHERS = [
-    // Sin registros todavía: la institución debe confirmar los datos a publicar.
-];
+const state = { area: "all" };
 
-const SEDES = {
-    principal: "Sede Principal",
-    "san-miguel": "Sede San Miguel",
-    arenal: "Sede Arenal",
-};
-
-const AREAS = {
-    "ciencias-basicas": "Ciencias básicas",
-    "matematicas": "Matemáticas",
-    "humanidades": "Humanidades y lengua castellana",
-    "ingles": "Inglés",
-    "ciencias-sociales": "Ciencias sociales",
-    "tecnologia": "Tecnología e informática",
-    "artistica": "Educación artística",
-    "educacion-fisica": "Educación física",
-    "etica-religion": "Ética, valores y religión",
-    "primaria": "Primaria / multigrado",
-};
-
-const state = { sede: "all", area: "all" };
-
-function teacherCard(teacher) {
-    const areas = teacher.areas.map((a) => AREAS[a] || a).join(", ");
+function groupSection(groupKey, teachers) {
+    const group = TEACHER_GROUPS[groupKey];
     return `
-        <article class="card teacher-card">
-            <div class="teacher-avatar" aria-hidden="true"><i class="fa fa-user"></i></div>
-            <h3>${teacher.name}</h3>
-            <span class="badge badge--academic">${SEDES[teacher.sede] || teacher.sede}</span>
-            <p class="teacher-areas">${areas}</p>
-            <a href="mailto:${teacher.email}" class="teacher-email">
-                <i class="fa fa-envelope" aria-hidden="true"></i> ${teacher.email}
-            </a>
-        </article>
+        <section class="teachers-group" aria-labelledby="group-${groupKey}">
+            <div class="teachers-group-header">
+                <h2 id="group-${groupKey}">${group.title}</h2>
+                <p>${group.description}</p>
+            </div>
+            <div class="teachers-grid">${teachers.map(teacherCard).join("")}</div>
+        </section>
     `;
 }
 
 function render() {
-    const grid = document.getElementById("teachersGrid");
+    const container = document.getElementById("teachersGroups");
     const emptyState = document.getElementById("teachersEmpty");
-    if (!grid) return;
+    if (!container) return;
 
-    const filtered = TEACHERS.filter((t) => {
-        const matchesSede = state.sede === "all" || t.sede === state.sede;
-        const matchesArea = state.area === "all" || t.areas.includes(state.area);
-        return matchesSede && matchesArea;
-    });
+    const filtered = TEACHERS.filter((t) => state.area === "all" || t.area === state.area);
 
-    grid.innerHTML = filtered.map(teacherCard).join("");
-    grid.hidden = filtered.length === 0;
+    container.innerHTML = Object.keys(TEACHER_GROUPS)
+        .map((key) => [key, filtered.filter((t) => t.group === key)])
+        .filter(([, teachers]) => teachers.length > 0)
+        .map(([key, teachers]) => groupSection(key, teachers))
+        .join("");
+
+    container.hidden = filtered.length === 0;
     if (emptyState) emptyState.hidden = filtered.length > 0;
 }
 
-document.querySelectorAll("[data-sede-filter]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-        document.querySelectorAll("[data-sede-filter]").forEach((b) => b.setAttribute("aria-pressed", "false"));
-        btn.setAttribute("aria-pressed", "true");
-        state.sede = btn.dataset.sedeFilter;
+const areaSelect = document.getElementById("areaFilter");
+if (areaSelect) {
+    areaSelect.innerHTML = `<option value="all">Todas las áreas</option>` +
+        Object.entries(TEACHER_AREAS)
+            .map(([key, label]) => `<option value="${key}">${label}</option>`)
+            .join("");
+
+    // Permite enlazar directamente a un área, p. ej. /pages/docentes.html?area=primaria
+    const initialArea = new URLSearchParams(window.location.search).get("area");
+    if (initialArea && TEACHER_AREAS[initialArea]) {
+        areaSelect.value = initialArea;
+        state.area = initialArea;
+    }
+
+    areaSelect.addEventListener("change", () => {
+        state.area = areaSelect.value;
         render();
     });
-});
-
-const areaSelect = document.getElementById("areaFilter");
-areaSelect?.addEventListener("change", () => {
-    state.area = areaSelect.value;
-    render();
-});
+}
 
 render();

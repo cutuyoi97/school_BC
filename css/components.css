@@ -828,3 +828,98 @@
         text-align: center;
     }
 }
+
+/*==================================================
+    TARJETAS DE DOCENTE (Personal Docente y Básica Primaria)
+==================================================*/
+
+.teachers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.teacher-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 28px 24px;
+    overflow: hidden;
+}
+
+.teacher-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 5px;
+    background: var(--color-primary-gradient);
+}
+
+.teacher-card--monodocente::before {
+    background: var(--color-secondary-gradient);
+}
+
+.teacher-role {
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    color: var(--color-primary-light);
+    margin-bottom: 8px;
+}
+
+.teacher-card--monodocente .teacher-role {
+    color: var(--color-accent);
+}
+
+.teacher-card h3 {
+    font-size: 1.15rem;
+    line-height: 1.3;
+    margin-bottom: 6px;
+}
+
+.teacher-areas {
+    font-size: .92rem;
+    color: var(--color-text-muted);
+    margin-bottom: 16px;
+}
+
+.teacher-sede {
+    font-size: .85rem;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+}
+
+.teacher-email {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: .88rem;
+    overflow-wrap: anywhere;
+}
+
+.teacher-email i {
+    flex-shrink: 0;
+}
+
+.teacher-email:hover span,
+.teacher-email:focus-visible span {
+    text-decoration: underline;
+}
+
+@media (max-width: 960px) {
+    .teachers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .teachers-grid {
+        grid-template-columns: 1fr;
+    }
+}
