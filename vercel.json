@@ -1,0 +1,21 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/identidad", "destination": "/pages/identidad.html" },
+    { "source": "/docentes", "destination": "/pages/docentes.html" },
+    { "source": "/eventos", "destination": "/pages/eventos.html" },
+    { "source": "/academica", "destination": "/pages/academica.html" },
+    { "source": "/contacto", "destination": "/pages/contacto.html" }
+  ],
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "statusCode": 301 },
+    { "source": "/pages/identidad.html", "destination": "/identidad", "statusCode": 301 },
+    { "source": "/pages/docentes.html", "destination": "/docentes", "statusCode": 301 },
+    { "source": "/pages/eventos.html", "destination": "/eventos", "statusCode": 301 },
+    { "source": "/pages/academica.html", "destination": "/academica", "statusCode": 301 },
+    { "source": "/pages/contacto.html", "destination": "/contacto", "statusCode": 301 },
+    { "source": "/pages/:page(identidad|docentes|eventos|academica|contacto)", "destination": "/:page", "statusCode": 301 },
+    { "source": "/centros-de-interes", "destination": "/eventos#centros-interes", "permanent": false }
+  ]
+}

@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos y Centros de Interés — Institución Educativa Buchadó Fernando Botero Angulo</title>
+    <title>Eventos y Centros de Interés — Institución Educativa Rural Buchadó Fernando Botero Angulo</title>
     <meta name="description"
-        content="Conoce los centros de interés (artes y raíces, juegos tradicionales, deportes) y los próximos eventos académicos, culturales e institucionales de la Institución Educativa Buchadó Fernando Botero Angulo.">
-    <link rel="canonical" href="/pages/eventos.html">
+        content="Conoce los Centros de Interés (Artes y Raíces; Nuestro espacio, nuestra responsabilidad; Juegos de Antes, Alegrías de Siempre; Emprendimiento) y los próximos eventos académicos, culturales e institucionales de la Institución Educativa Rural Buchadó Fernando Botero Angulo.">
+    <link rel="canonical" href="https://www.iebfba.edu.co/eventos">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Eventos y Centros de Interés — Institución Educativa Buchadó Fernando Botero Angulo">
+    <meta property="og:title" content="Eventos y Centros de Interés — Institución Educativa Rural Buchadó Fernando Botero Angulo">
     <meta property="og:description" content="Centros de interés, próximos eventos y galería de nuestra comunidad educativa.">
     <meta property="og:image" content="/assets/images/logo/logo-buchado.png">
-    <meta property="og:url" content="/pages/eventos.html">
+    <meta property="og:url" content="https://www.iebfba.edu.co/eventos">
 
     <link rel="icon" type="image/png" href="/assets/images/logo/logo-buchado.png">
 
@@ -46,51 +46,265 @@
             </div>
         </section>
 
-        <!-- CENTROS DE INTERÉS -->
-        <section class="section" id="centros-interes">
+        <!-- CENTROS DE INTERÉS
+             Contenido tomado del documento institucional
+             «CENTROS DE INTERÉS EN LA IER BUCHADÓ». -->
+        <section class="section interest-centers" id="centros-interes" aria-labelledby="centros-interes-title">
             <div class="container">
-                <div class="section-header section-header--accent">
-                    <span class="eyebrow">Formación complementaria</span>
-                    <h2>Centros de interés</h2>
-                    <p>Espacios formativos que complementan el plan de estudios y fortalecen habilidades,
-                        valores e identidad cultural.</p>
+                <!-- Encabezado -->
+                <header class="ci-intro">
+                    <span class="eyebrow">Formación integral</span>
+                    <h2 id="centros-interes-title">Centros de Interés</h2>
+                    <p class="ci-tagline">“Descubrimos talentos, fortalecemos nuestras raíces y transformamos nuestro
+                        territorio”.</p>
+                    <p>Los Centros de Interés son espacios pedagógicos en los que los estudiantes exploran sus gustos,
+                        talentos, necesidades y posibilidades de aprendizaje mediante experiencias prácticas que
+                        relacionan el conocimiento académico con la vida cotidiana.</p>
+                    <p>La Institución Educativa Rural Buchadó Fernando Botero Angulo, ubicada en el corregimiento de
+                        Buchadó, municipio de Vigía del Fuerte, Antioquia, desarrolla esta propuesta mediante cuatro
+                        Centros de Interés que reconocen el territorio como fuente de conocimiento, identidad y
+                        transformación social.</p>
+                </header>
+
+                <!-- Tarjetas de los cuatro centros -->
+                <ul class="ci-grid" role="list">
+                    <li class="card ci-card ci-card--artes">
+                        <figure class="ci-card-media">
+                            <img src="/assets/images/comunidad/danza-tradicional.jpg"
+                                alt="Estudiantes con trajes típicos durante una presentación de danza tradicional"
+                                width="1600" height="1200" loading="lazy" decoding="async">
+                        </figure>
+                        <div class="ci-card-body">
+                            <span class="ci-card-number" aria-hidden="true">01</span>
+                            <h3>Artes y Raíces</h3>
+                            <p>Fortalece los aprendizajes y la formación integral mediante el arte, la música, la danza,
+                                la narración oral, las artes plásticas y el reconocimiento de las tradiciones y los
+                                saberes ancestrales del territorio.</p>
+                            <a class="ci-card-link" href="#ci-artes" data-ci-open="ci-artes">
+                                Conocer más <span class="sr-only">sobre Artes y Raíces</span>
+                                <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="card ci-card ci-card--espacio">
+                        <figure class="ci-card-media">
+                            <img src="/assets/images/sedes/sede-principal-patio.jpg"
+                                alt="Patio cubierto y corredores de la Sede Principal"
+                                width="1280" height="960" loading="lazy" decoding="async">
+                        </figure>
+                        <div class="ci-card-body">
+                            <span class="ci-card-number" aria-hidden="true">02</span>
+                            <h3>Nuestro espacio, nuestra responsabilidad</h3>
+                            <p>Promueve la conciencia ambiental, el cuidado y la conservación de los espacios
+                                escolares, los hábitos responsables, el trabajo colaborativo y el sentido de
+                                pertenencia.</p>
+                            <a class="ci-card-link" href="#ci-espacio" data-ci-open="ci-espacio">
+                                Conocer más <span class="sr-only">sobre Nuestro espacio, nuestra responsabilidad</span>
+                                <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="card ci-card ci-card--juegos">
+                        <figure class="ci-card-media">
+                            <img src="/assets/images/comunidad/actividad-grupal.jpg"
+                                alt="Estudiantes sentados en círculo en el corredor, con una compañera de pie en el centro durante una actividad grupal"
+                                width="1280" height="963" loading="lazy" decoding="async">
+                        </figure>
+                        <div class="ci-card-body">
+                            <span class="ci-card-number" aria-hidden="true">03</span>
+                            <h3>Juegos de Antes, Alegrías de Siempre</h3>
+                            <p>Rescata y practica juegos tradicionales, rondas infantiles y actividades recreativas de
+                                la región, fortaleciendo la convivencia, la integración, la identidad cultural y el uso
+                                saludable del tiempo libre.</p>
+                            <a class="ci-card-link" href="#ci-juegos" data-ci-open="ci-juegos">
+                                Conocer más <span class="sr-only">sobre Juegos de Antes, Alegrías de Siempre</span>
+                                <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="card ci-card ci-card--emprendimiento">
+                        <figure class="ci-card-media">
+                            <img src="/assets/images/comunidad/manualidades.jpg"
+                                alt="Estudiantes elaborando abanicos a mano en una actividad práctica"
+                                width="963" height="1280" loading="lazy" decoding="async">
+                        </figure>
+                        <div class="ci-card-body">
+                            <span class="ci-card-number" aria-hidden="true">04</span>
+                            <h3>Emprendimiento</h3>
+                            <p>Impulsa la creatividad, la iniciativa, las habilidades manuales y la capacidad de
+                                transformar ideas en productos, promoviendo la autonomía y el trabajo colaborativo.</p>
+                            <a class="ci-card-link" href="#ci-emprendimiento" data-ci-open="ci-emprendimiento">
+                                Conocer más <span class="sr-only">sobre Emprendimiento</span>
+                                <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Información ampliada (acordeón nativo con <details>) -->
+                <div class="ci-details">
+                    <h3 class="ci-details-title">Conoce cada Centro de Interés</h3>
+
+                    <details class="ci-detail ci-detail--artes" id="ci-artes">
+                        <summary>
+                            <span class="ci-detail-icon" aria-hidden="true"><i class="fa fa-music"></i></span>
+                            <span class="ci-detail-name">Artes y Raíces</span>
+                            <i class="fa fa-chevron-down ci-detail-chevron" aria-hidden="true"></i>
+                        </summary>
+                        <div class="ci-detail-body">
+                            <section>
+                                <h4>Propósito pedagógico</h4>
+                                <p>Estrategia pedagógica orientada al fortalecimiento de los aprendizajes y la
+                                    formación integral de los estudiantes mediante el reconocimiento del arte, las
+                                    tradiciones, los saberes ancestrales y la riqueza cultural del territorio. Busca
+                                    propiciar experiencias de aprendizaje significativas que permitan a los niños,
+                                    niñas y jóvenes desarrollar sus capacidades y fortalecer su identidad.</p>
+                            </section>
+                            <section>
+                                <h4>Experiencias</h4>
+                                <ul class="ci-tags">
+                                    <li>Música</li>
+                                    <li>Danza</li>
+                                    <li>Narración oral</li>
+                                    <li>Artes plásticas</li>
+                                    <li>Creación colectiva</li>
+                                    <li>Recuperación de la memoria comunitaria</li>
+                                </ul>
+                                <p>Estas experiencias se articulan con las áreas del conocimiento y favorecen
+                                    competencias en lectura, escritura, pensamiento lógico, investigación, creatividad,
+                                    trabajo colaborativo y resolución de problemas.</p>
+                            </section>
+                            <section>
+                                <h4>Habilidades y valores</h4>
+                                <p>Capacidades cognitivas, artísticas, comunicativas y socioemocionales; identidad,
+                                    autoestima, sentido de pertenencia y valoración de las raíces culturales.</p>
+                            </section>
+                            <section>
+                                <h4>Aporte a la formación integral y a la comunidad</h4>
+                                <p>Forma personas sensibles, críticas, autónomas, creativas, respetuosas de la
+                                    diversidad y comprometidas con su comunidad. Promueve el diálogo entre la escuela,
+                                    las familias y los portadores de saberes tradicionales, contribuye a preservar el
+                                    patrimonio cultural, fortalece la participación estudiantil y favorece la
+                                    convivencia.</p>
+                            </section>
+                        </div>
+                    </details>
+
+                    <details class="ci-detail ci-detail--espacio" id="ci-espacio">
+                        <summary>
+                            <span class="ci-detail-icon" aria-hidden="true"><i class="fa fa-leaf"></i></span>
+                            <span class="ci-detail-name">Nuestro espacio, nuestra responsabilidad</span>
+                            <i class="fa fa-chevron-down ci-detail-chevron" aria-hidden="true"></i>
+                        </summary>
+                        <div class="ci-detail-body">
+                            <section>
+                                <h4>Propósito pedagógico</h4>
+                                <p>Fortalecer la conciencia ambiental y el sentido de pertenencia de los estudiantes
+                                    mediante el cuidado, la conservación y la transformación de los espacios
+                                    escolares, relacionando el aprendizaje con las características y necesidades del
+                                    territorio.</p>
+                            </section>
+                            <section>
+                                <h4>Experiencias</h4>
+                                <ul class="ci-tags">
+                                    <li>Cuidado de los espacios escolares</li>
+                                    <li>Conservación</li>
+                                    <li>Transformación del entorno</li>
+                                    <li>Actividades prácticas</li>
+                                </ul>
+                            </section>
+                            <section>
+                                <h4>Habilidades y valores</h4>
+                                <p>Hábitos responsables, trabajo colaborativo, respeto por la naturaleza y
+                                    comprensión de que cuidar el ambiente es una responsabilidad compartida.</p>
+                            </section>
+                            <section>
+                                <h4>Aporte a la formación integral y a la comunidad</h4>
+                                <p>Una escuela más limpia, organizada y agradable. Integra la educación ambiental con
+                                    las experiencias cotidianas, el aprendizaje significativo y la formación en
+                                    valores, y forma estudiantes capaces de generar cambios positivos en la escuela,
+                                    sus hogares y la comunidad.</p>
+                            </section>
+                        </div>
+                    </details>
+
+                    <details class="ci-detail ci-detail--juegos" id="ci-juegos">
+                        <summary>
+                            <span class="ci-detail-icon" aria-hidden="true"><i class="fa fa-child"></i></span>
+                            <span class="ci-detail-name">Juegos de Antes, Alegrías de Siempre</span>
+                            <i class="fa fa-chevron-down ci-detail-chevron" aria-hidden="true"></i>
+                        </summary>
+                        <div class="ci-detail-body">
+                            <section>
+                                <h4>Propósito pedagógico</h4>
+                                <p>Rescatar, practicar y conservar los juegos tradicionales que han hecho parte de la
+                                    historia, la cultura y las costumbres del territorio, para que los estudiantes
+                                    aprendan jugando.</p>
+                            </section>
+                            <section>
+                                <h4>Experiencias</h4>
+                                <ul class="ci-tags">
+                                    <li>Rondas infantiles</li>
+                                    <li>Juegos populares</li>
+                                    <li>Actividades recreativas de la región</li>
+                                </ul>
+                            </section>
+                            <section>
+                                <h4>Habilidades y valores</h4>
+                                <p>Convivencia, trabajo en equipo, respeto, solidaridad e integración entre compañeros
+                                    de diferentes grados; identidad y sentido de pertenencia.</p>
+                            </section>
+                            <section>
+                                <h4>Aporte a la formación integral y a la comunidad</h4>
+                                <p>Recupera tradiciones transmitidas de generación en generación y mantiene viva la
+                                    memoria de los abuelos y las familias. Promueve el uso saludable del tiempo libre
+                                    con alternativas que ayudan a disminuir el tiempo frente a celulares y tabletas,
+                                    haciendo de la escuela un espacio de encuentro, movimiento, alegría y
+                                    aprendizaje.</p>
+                            </section>
+                        </div>
+                    </details>
+
+                    <details class="ci-detail ci-detail--emprendimiento" id="ci-emprendimiento">
+                        <summary>
+                            <span class="ci-detail-icon" aria-hidden="true"><i class="fa fa-lightbulb-o"></i></span>
+                            <span class="ci-detail-name">Emprendimiento</span>
+                            <i class="fa fa-chevron-down ci-detail-chevron" aria-hidden="true"></i>
+                        </summary>
+                        <div class="ci-detail-body">
+                            <section>
+                                <h4>Propósito pedagógico</h4>
+                                <p>Impulsar la creatividad, la iniciativa, las habilidades manuales y la capacidad de
+                                    transformar ideas en productos.</p>
+                            </section>
+                            <section>
+                                <h4>Habilidades y valores</h4>
+                                <p>Autonomía, trabajo colaborativo y competencias útiles para la vida.</p>
+                            </section>
+                        </div>
+                    </details>
                 </div>
 
-                <div class="interest-centers-grid">
-                    <article class="card interest-center-card">
-                        <div class="interest-center-icon interest-center-icon--primary" aria-hidden="true">
-                            <i class="fa fa-paint-brush"></i>
-                        </div>
-                        <h3>Artes y raíces</h3>
-                        <p>Espacio dedicado a la expresión artística y al rescate de las tradiciones culturales
-                            de nuestra región.</p>
-                    </article>
-
-                    <article class="card interest-center-card">
-                        <div class="interest-center-icon interest-center-icon--secondary" aria-hidden="true">
-                            <i class="fa fa-puzzle-piece"></i>
-                        </div>
-                        <h3>Juegos tradicionales</h3>
-                        <p>Rescate y práctica de los juegos tradicionales que fortalecen la identidad cultural y
-                            la sana convivencia.</p>
-                    </article>
-
-                    <article class="card interest-center-card">
-                        <div class="interest-center-icon interest-center-icon--accent" aria-hidden="true">
-                            <i class="fa fa-futbol-o"></i>
-                        </div>
-                        <h3>Deportes</h3>
-                        <p>Formación deportiva y hábitos de vida saludable a través de distintas disciplinas.</p>
-                    </article>
-
-                    <article class="card interest-center-card interest-center-card--pending">
-                        <div class="interest-center-icon interest-center-icon--pending" aria-hidden="true">
-                            <i class="fa fa-question"></i>
-                        </div>
-                        <h3>Cuarto centro de interés</h3>
-                        <p><i class="fa fa-info-circle" aria-hidden="true"></i> Nombre y descripción pendientes
-                            de confirmación por parte de la institución.</p>
-                    </article>
+                <!-- Cierre -->
+                <div class="ci-closing">
+                    <div class="ci-closing-text">
+                        <h3>Aprendemos desde las riquezas de nuestro territorio</h3>
+                        <p>A través del arte, el cuidado ambiental, los juegos tradicionales y el emprendimiento,
+                            fortalecemos nuestros talentos, valoramos nuestras raíces y construimos oportunidades para
+                            el futuro: una escuela donde la cultura se preserva, el ambiente se cuida, las tradiciones
+                            se mantienen vivas y las ideas se transforman en oportunidades.</p>
+                    </div>
+                    <ul class="ci-closing-list" role="list">
+                        <li><i class="fa fa-music" aria-hidden="true"></i> Preservación de la cultura y las tradiciones</li>
+                        <li><i class="fa fa-leaf" aria-hidden="true"></i> Cuidado del entorno</li>
+                        <li><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Capacidades artísticas, cognitivas,
+                            comunicativas, socioemocionales y productivas</li>
+                        <li><i class="fa fa-users" aria-hidden="true"></i> Convivencia, inclusión y trabajo colaborativo</li>
+                        <li><i class="fa fa-home" aria-hidden="true"></i> Escuela, familias y comunidad unidas</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -178,7 +392,7 @@
                 </article>
 
                 <article class="card event-card" data-category="realizado">
-                    <img src="/assets/images/logo/escudo-colegio.png" alt="Escudo institucional de la Institución Educativa Buchadó Fernando Botero Angulo">
+                    <img src="/assets/images/logo/escudo-colegio.png" alt="Escudo institucional de la Institución Educativa Rural Buchadó Fernando Botero Angulo">
                     <div class="event-card-body">
                         <span class="badge badge--sports">Deportes</span>
                         <h3>Olimpiadas</h3>
@@ -191,7 +405,7 @@
                 </article>
 
                 <article class="card event-card" data-category="realizado">
-                    <img src="/assets/images/logo/escudo-colegio.png" alt="Escudo institucional de la Institución Educativa Buchadó Fernando Botero Angulo">
+                    <img src="/assets/images/logo/escudo-colegio.png" alt="Escudo institucional de la Institución Educativa Rural Buchadó Fernando Botero Angulo">
                     <div class="event-card-body">
                         <span class="badge badge--important">Institucional</span>
                         <h3>Día de la Familia</h3>

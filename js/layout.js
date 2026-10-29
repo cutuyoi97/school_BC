@@ -8,44 +8,43 @@
 
 (() => {
     // Nombre oficial centralizado: cualquier cambio futuro solo se hace aquí.
-    const INSTITUTION_NAME_FULL = "Institución Educativa Buchadó Fernando Botero Angulo";
-    const INSTITUTION_NAME_SHORT = "I.E. Buchadó Fernando Botero Angulo";
+    const INSTITUTION_NAME_FULL = "Institución Educativa Rural Buchadó Fernando Botero Angulo";
 
     const NAV_ITEMS = [
         { id: "home", href: "/", label: "Inicio", icon: "fa-home" },
         {
-            id: "identidad", href: "/pages/identidad.html", label: "Nuestra Identidad", icon: "fa-university",
+            id: "identidad", href: "/identidad", label: "Nuestra Identidad", icon: "fa-university",
             children: [
-                { href: "/pages/identidad.html#institucional", label: "Información institucional" },
-                { href: "/pages/identidad.html#valores", label: "Principios y valores" },
-                { href: "/pages/identidad.html#sedes", label: "Sedes educativas" },
+                { href: "/identidad#institucional", label: "Información institucional" },
+                { href: "/identidad#valores", label: "Principios y valores" },
+                { href: "/identidad#sedes", label: "Sedes educativas" },
             ],
         },
-        { id: "docentes", href: "/pages/docentes.html", label: "Personal Docente", icon: "fa-users" },
+        { id: "docentes", href: "/docentes", label: "Personal Docente", icon: "fa-users" },
         {
-            id: "eventos", href: "/pages/eventos.html", label: "Eventos y Centros de Interés", icon: "fa-calendar",
+            id: "eventos", href: "/eventos", label: "Eventos y Centros de Interés", icon: "fa-calendar",
             children: [
-                { href: "/pages/eventos.html#centros-interes", label: "Centros de interés" },
-                { href: "/pages/eventos.html#eventos-grid", label: "Eventos institucionales" },
-                { href: "/pages/eventos.html#galeria", label: "Galería" },
+                { href: "/eventos#centros-interes", label: "Centros de interés" },
+                { href: "/eventos#eventos-grid", label: "Eventos institucionales" },
+                { href: "/eventos#galeria", label: "Galería" },
             ],
         },
         {
-            id: "academica", href: "/pages/academica.html", label: "Información Académica", icon: "fa-graduation-cap",
+            id: "academica", href: "/academica", label: "Información Académica", icon: "fa-graduation-cap",
             children: [
-                { href: "/pages/academica.html#pei", label: "Proyecto Educativo Institucional" },
-                { href: "/pages/academica.html#basica-primaria", label: "Básica Primaria" },
-                { href: "/pages/academica.html#calendario", label: "Calendario institucional" },
-                { href: "/pages/academica.html#matricula", label: "Proceso de matrícula" },
+                { href: "/academica#pei", label: "Proyecto Educativo Institucional" },
+                { href: "/academica#basica-primaria", label: "Básica Primaria" },
+                { href: "/academica#calendario", label: "Calendario institucional" },
+                { href: "/academica#matricula", label: "Proceso de matrícula" },
                 { href: "https://www.seduca.gov.co/", label: "SEDUCA", external: true },
             ],
         },
         {
-            id: "contacto", href: "/pages/contacto.html", label: "Contáctanos", icon: "fa-envelope", isContact: true,
+            id: "contacto", href: "/contacto", label: "Contáctanos", icon: "fa-envelope", isContact: true,
             children: [
-                { href: "/pages/contacto.html#formulario", label: "Formulario de contacto" },
-                { href: "/pages/contacto.html#dependencias", label: "Dependencias y personal de apoyo" },
-                { href: "/pages/contacto.html#canales", label: "Canales de contacto" },
+                { href: "/contacto#formulario", label: "Formulario de contacto" },
+                { href: "/contacto#dependencias", label: "Dependencias y personal de apoyo" },
+                { href: "/contacto#canales", label: "Canales de contacto" },
             ],
         },
     ];
@@ -120,7 +119,7 @@
                 <a href="/" class="logo">
                     <img src="/assets/images/logo/logo-buchado.png" alt="Escudo de la ${INSTITUTION_NAME_FULL}" width="60" height="60">
                     <span class="logo-text">
-                        <strong>${INSTITUTION_NAME_SHORT}</strong>
+                        <strong>${INSTITUTION_NAME_FULL}</strong>
                         <span>Institución Educativa Oficial</span>
                     </span>
                 </a>
@@ -147,7 +146,7 @@
                 </button>
                 <div class="mobile-menu-header">
                     <img src="/assets/images/logo/logo-buchado.png" alt="" width="80" height="80">
-                    <h2>${INSTITUTION_NAME_SHORT}</h2>
+                    <h2>${INSTITUTION_NAME_FULL}</h2>
                     <p>Institución Educativa Oficial</p>
                 </div>
                 <ul>
@@ -176,8 +175,8 @@
                         <h2>${INSTITUTION_NAME_FULL}</h2>
                         <p>Formando ciudadanos con valores, conocimiento y compromiso desde nuestra comunidad educativa.</p>
                         <div class="footer-links">
-                            <a href="/pages/eventos.html"><i class="fa fa-calendar" aria-hidden="true"></i> Eventos y centros de interés</a>
-                            <a href="/pages/contacto.html"><i class="fa fa-envelope" aria-hidden="true"></i> PQRS y contacto</a>
+                            <a href="/eventos"><i class="fa fa-calendar" aria-hidden="true"></i> Eventos y centros de interés</a>
+                            <a href="/contacto"><i class="fa fa-envelope" aria-hidden="true"></i> PQRS y contacto</a>
                         </div>
                     </div>
                 </div>
@@ -185,7 +184,7 @@
                     <section>
                         <div class="logo">
                             <img src="/assets/images/logo/logo-buchado.png" alt="" width="60" height="60" style="border-radius:50%">
-                            <span class="logo-text"><strong>${INSTITUTION_NAME_SHORT}</strong><span>Institución Educativa Oficial</span></span>
+                            <span class="logo-text"><strong>${INSTITUTION_NAME_FULL}</strong><span>Institución Educativa Oficial</span></span>
                         </div>
                         <p><i class="fa fa-map-marker" aria-hidden="true"></i> Dirección de la institución (por definir)</p>
                         <p><i class="fa fa-phone" aria-hidden="true"></i> (604) 123 4567</p>
@@ -194,19 +193,19 @@
                     </section>
                     <section>
                         <h3>Navegación</h3>
-                        <a href="/pages/identidad.html">Nuestra Identidad</a>
-                        <a href="/pages/docentes.html">Personal Docente</a>
-                        <a href="/pages/eventos.html">Eventos y Centros de Interés</a>
-                        <a href="/pages/academica.html">Información Académica</a>
-                        <a href="/pages/contacto.html">Contáctanos</a>
+                        <a href="/identidad">Nuestra Identidad</a>
+                        <a href="/docentes">Personal Docente</a>
+                        <a href="/eventos">Eventos y Centros de Interés</a>
+                        <a href="/academica">Información Académica</a>
+                        <a href="/contacto">Contáctanos</a>
                     </section>
                     <section>
                         <h3>Información académica</h3>
-                        <a href="/pages/academica.html#pei">Proyecto Educativo Institucional</a>
-                        <a href="/pages/academica.html#calendario">Calendario institucional</a>
-                        <a href="/pages/academica.html#matricula">Proceso de matrícula</a>
+                        <a href="/academica#pei">Proyecto Educativo Institucional</a>
+                        <a href="/academica#calendario">Calendario institucional</a>
+                        <a href="/academica#matricula">Proceso de matrícula</a>
                         <a href="https://www.seduca.gov.co/" target="_blank" rel="noopener">SEDUCA</a>
-                        <a href="/pages/contacto.html#dependencias">Dependencias y personal de apoyo</a>
+                        <a href="/contacto#dependencias">Dependencias y personal de apoyo</a>
                     </section>
                 </div>
                 <div class="footer-bottom">
@@ -220,7 +219,7 @@
                         <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                         <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                         <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-                        <a href="/pages/contacto.html" aria-label="Contacto"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                        <a href="/contacto" aria-label="Contacto"><i class="fa fa-envelope" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </footer>

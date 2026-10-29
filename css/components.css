@@ -92,6 +92,12 @@
     color: var(--color-text-muted);
 }
 
+/* El nombre oficial completo ocupa dos líneas para no desplazar el menú. */
+.site-header .logo-text strong {
+    max-width: 250px;
+    font-size: 1rem;
+}
+
 .nav-links {
     display: flex;
     align-items: center;

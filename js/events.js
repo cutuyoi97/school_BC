@@ -10,6 +10,35 @@ document.querySelectorAll(".featured-countdown").forEach((el) => createCountdown
 observeReveal(".event-card");
 observeReveal(".news-card", { stagger: 0.08 });
 
+/* ----- Centros de Interés: abrir la información ampliada desde cada tarjeta ----- */
+
+function openInterestCenter(id, behavior = "smooth") {
+    const detail = document.getElementById(id);
+    if (!(detail instanceof HTMLDetailsElement)) return;
+    detail.open = true;
+    detail.scrollIntoView({ block: "start", behavior });
+    detail.querySelector("summary")?.focus({ preventScroll: true });
+}
+
+document.querySelectorAll("[data-ci-open]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+        event.preventDefault();
+        history.replaceState(null, "", `#${link.dataset.ciOpen}`);
+        openInterestCenter(link.dataset.ciOpen);
+    });
+});
+
+function openInterestCenterFromHash(behavior) {
+    if (location.hash.startsWith("#ci-")) openInterestCenter(location.hash.slice(1), behavior);
+}
+
+// En la carga inicial se espera al evento load y se desplaza sin animación:
+// un desplazamiento suave largo puede interrumpirse mientras la página carga.
+const openFromHashOnLoad = () => openInterestCenterFromHash("instant");
+if (document.readyState === "complete") openFromHashOnLoad();
+else window.addEventListener("load", openFromHashOnLoad, { once: true });
+window.addEventListener("hashchange", () => openInterestCenterFromHash());
+
 /* ----- Filtros ----- */
 
 const filterButtons = document.querySelectorAll(".filter-btn");

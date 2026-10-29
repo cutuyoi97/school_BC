@@ -1,6 +1,6 @@
-# Institución Educativa Buchadó Fernando Botero Angulo
+# Institución Educativa Rural Buchadó Fernando Botero Angulo
 
-Sitio web institucional de la Institución Educativa Buchadó Fernando Botero
+Sitio web institucional de la Institución Educativa Rural Buchadó Fernando Botero
 Angulo (contenido de ejemplo/ficticio para fines de este proyecto): identidad
 institucional, sedes educativas, personal docente, eventos y centros de
 interés, información académica y un formulario de contacto funcional.
@@ -60,12 +60,32 @@ buchado-colegio/
 └── package.json
 ```
 
-Todas las rutas internas (CSS, JS, imágenes, navegación) usan rutas absolutas
-(`/css/...`, `/js/...`, `/pages/...`) para que funcionen igual sin importar
+Todas las rutas internas (CSS, JS, imágenes) usan rutas absolutas
+(`/css/...`, `/js/...`, `/assets/...`) para que funcionen igual sin importar
 la profundidad de la página.
 
+### URLs limpias
+
+Las páginas se publican sin `.html` ni `/pages/`, configurado en `vercel.json`:
+
+| URL pública   | Archivo                 |
+| ------------- | ----------------------- |
+| `/`           | `index.html`            |
+| `/identidad`  | `pages/identidad.html`  |
+| `/docentes`   | `pages/docentes.html`   |
+| `/eventos`    | `pages/eventos.html`    |
+| `/academica`  | `pages/academica.html`  |
+| `/contacto`   | `pages/contacto.html`   |
+
+- `rewrites` sirve cada URL limpia desde su archivo original (no hay páginas duplicadas).
+- `redirects` envía las direcciones antiguas (`/pages/*.html`, `/index.html`) a las nuevas con
+  un 301 permanente. `/centros-de-interes` lleva a la sección de Centros de Interés en `/eventos`.
+- Los enlaces internos, las etiquetas `canonical`/`og:url`, `sitemap.xml` y `robots.txt` usan
+  ya las URLs limpias. Si se agrega una página nueva, hay que sumarla en los tres lugares.
+- Para probar estas reglas en local usa `vercel dev` (un servidor estático genérico no las aplica).
+
 El nombre oficial de la institución está centralizado en `js/layout.js`
-(constantes `INSTITUTION_NAME_FULL` / `INSTITUTION_NAME_SHORT`), usado en el
+(constante `INSTITUTION_NAME_FULL`), usado en el
 header, el menú móvil y el footer de las seis páginas. Los `<title>` y
 metadatos de cada página se mantienen como HTML estático (por SEO) y deben
 actualizarse individualmente si el nombre cambia.

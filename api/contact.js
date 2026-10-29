@@ -90,7 +90,7 @@ module.exports = async (req, res) => {
     }
 
     const toAddress = process.env.CONTACT_TO_EMAIL || "secretaria@buchado.com";
-    const fromAddress = process.env.CONTACT_FROM_EMAIL || "I.E. Buchadó Fernando Botero Angulo <onboarding@resend.dev>";
+    const fromAddress = process.env.CONTACT_FROM_EMAIL || "Institución Educativa Rural Buchadó Fernando Botero Angulo <onboarding@resend.dev>";
 
     const cleanName = String(name).trim();
     const cleanEmail = String(email).trim();
