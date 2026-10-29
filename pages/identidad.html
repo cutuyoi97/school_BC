@@ -12,27 +12,31 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Nuestra Identidad — Institución Educativa Rural Buchadó Fernando Botero Angulo">
     <meta property="og:description" content="Historia, misión, visión, valores y sedes de nuestra institución educativa.">
-    <meta property="og:image" content="/assets/images/logo/logo-buchado.png">
+    <meta property="og:image" content="https://www.iebfba.edu.co/assets/images/logo/logo-buchado.png">
     <meta property="og:url" content="https://www.iebfba.edu.co/identidad">
 
-    <link rel="icon" type="image/png" href="/assets/images/logo/logo-buchado.png">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/logo/logo-buchado-192.png">
+    <link rel="apple-touch-icon" href="/assets/images/logo/apple-touch-icon.png">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mukta:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preload" as="image" href="/assets/images/sedes/sede-principal-patio-800.webp" media="(max-width: 800px)" fetchpriority="high">
+    <link rel="preload" as="image" href="/assets/images/sedes/sede-principal-patio-1200.webp" media="(min-width: 801px)" fetchpriority="high">
+    <link rel="preload" href="/assets/fonts/mukta/mukta-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/kanit/kanit-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/font-awesome/fontawesome-webfont.woff2?v=4.7.0" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/components.css">
     <link rel="stylesheet" href="/css/identidad.css">
 </head>
 
-<body>
-    <script>window.CURRENT_PAGE = "identidad";</script>
+<body data-page="identidad">
     <div id="site-header-mount"></div>
     <div id="mobile-nav-mount"></div>
+    <!-- Síncrono y antes del contenido: el encabezado existe desde el primer pintado (sin CLS). -->
+    <script src="/js/layout.js"></script>
 
     <main id="main-content">
         <!-- BANNER -->
@@ -49,7 +53,7 @@
             <section class="section">
                 <div class="container history">
                     <figure>
-                        <img src="/assets/images/logo/escudo-colegio.png" alt="Escudo institucional de la Institución Educativa Rural Buchadó Fernando Botero Angulo">
+                        <img decoding="async" src="/assets/images/logo/escudo-colegio-300.webp" srcset="/assets/images/logo/escudo-colegio-300.webp 300w, /assets/images/logo/escudo-colegio-586.webp 586w" sizes="(max-width: 768px) 92vw, 586px" width="586" height="530" alt="Escudo institucional de la Institución Educativa Rural Buchadó Fernando Botero Angulo">
                     </figure>
                     <div class="history-content reveal">
                         <span class="eyebrow">Nuestra historia</span>
@@ -281,7 +285,7 @@
                 <div class="sedes-grid">
                     <article class="card sede-card">
                         <div class="sede-photo">
-                            <img src="/assets/images/sedes/sede-principal-pabellones.jpg"
+                            <img decoding="async" src="/assets/images/sedes/sede-principal-pabellones-800.webp" srcset="/assets/images/sedes/sede-principal-pabellones-480.webp 480w, /assets/images/sedes/sede-principal-pabellones-800.webp 800w, /assets/images/sedes/sede-principal-pabellones-1200.webp 1200w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="600"
                                 alt="Pabellones de aulas de la Sede Principal en Buchadó, con barandas amarillas y corredores elevados" loading="lazy">
                         </div>
                         <div class="sede-icon sede-icon--primary" aria-hidden="true">
@@ -297,7 +301,7 @@
 
                     <article class="card sede-card">
                         <div class="sede-photo">
-                            <img src="/assets/images/sedes/sede-san-miguel.jpg"
+                            <img decoding="async" src="/assets/images/sedes/sede-san-miguel-800.webp" srcset="/assets/images/sedes/sede-san-miguel-480.webp 480w, /assets/images/sedes/sede-san-miguel-800.webp 800w, /assets/images/sedes/sede-san-miguel-1200.webp 1200w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="600"
                                 alt="Bloques de aulas de la Sede San Miguel, de color amarillo, frente al patio de tierra" loading="lazy">
                         </div>
                         <div class="sede-icon sede-icon--secondary" aria-hidden="true">
@@ -315,7 +319,7 @@
 
                     <article class="card sede-card">
                         <div class="sede-photo">
-                            <img src="/assets/images/sedes/sede-arenal-aula.jpg"
+                            <img decoding="async" src="/assets/images/sedes/sede-arenal-aula-800.webp" srcset="/assets/images/sedes/sede-arenal-aula-480.webp 480w, /assets/images/sedes/sede-arenal-aula-800.webp 800w, /assets/images/sedes/sede-arenal-aula-960.webp 960w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="1067"
                                 alt="Estudiantes de la Sede Arenal en su aula de clase" loading="lazy">
                         </div>
                         <div class="sede-icon sede-icon--accent" aria-hidden="true">
@@ -347,7 +351,7 @@
                     <a href="/contacto" class="btn btn-primary">Contáctanos</a>
                 </div>
                 <figure class="reveal">
-                    <img src="/assets/images/comunidad/estudiantes-flores.jpg"
+                    <img decoding="async" src="/assets/images/comunidad/estudiantes-flores-800.webp" srcset="/assets/images/comunidad/estudiantes-flores-480.webp 480w, /assets/images/comunidad/estudiantes-flores-800.webp 800w, /assets/images/comunidad/estudiantes-flores-1200.webp 1200w, /assets/images/comunidad/estudiantes-flores-1599.webp 1599w" sizes="(max-width: 768px) 92vw, 640px" width="800" height="450"
                         alt="Grupo de estudiantes con uniforme sosteniendo flores de papel elaboradas en clase">
                 </figure>
             </div>
@@ -382,7 +386,7 @@
                             metas de calidad y la pertinencia, enmarcados en nuestro lema: “Educando para la
                             vida”.</p>
                         <div class="rector-signature">
-                            <h4>Mg. Jorge E. Mosquera Salas</h4>
+                            <p class="rector-name">Mg. Jorge E. Mosquera Salas</p>
                             <span>Rector</span>
                         </div>
                     </div>
@@ -393,7 +397,6 @@
 
     <div id="site-footer-mount"></div>
 
-    <script src="/js/layout.js"></script>
     <script src="/js/navigation.js"></script>
     <script src="/js/identidad.js"></script>
 </body>

@@ -1,9 +1,11 @@
 /**
  * Header, menú móvil y footer compartidos por todas las páginas.
- * Cada página declara `window.CURRENT_PAGE` antes de cargar este script
- * y coloca los contenedores #site-header-mount / #mobile-nav-mount /
- * #site-footer-mount donde corresponda. Se renderiza de forma síncrona
- * (sin esperar DOMContentLoaded) para evitar parpadeos de layout.
+ * Cada página declara su identificador en `<body data-page="...">` (sin
+ * scripts inline, para permitir una CSP estricta) y coloca los contenedores
+ * #site-header-mount / #mobile-nav-mount / #site-footer-mount donde corresponda. Se carga justo después de
+ * #mobile-nav-mount y renderiza el encabezado de forma síncrona (antes del
+ * primer pintado, sin desplazar el contenido); el pie se inserta al
+ * terminar el análisis del documento.
  */
 
 (() => {
@@ -49,14 +51,13 @@
         },
     ];
 
-    const SOCIAL_LINKS = [
-        { href: "https://www.facebook.com", label: "Facebook", icon: "fa-facebook" },
-        { href: "https://www.instagram.com", label: "Instagram", icon: "fa-instagram" },
-        { href: "https://www.youtube.com", label: "YouTube", icon: "fa-youtube-play" },
-        { href: "https://twitter.com", label: "Twitter", icon: "fa-twitter" },
-    ];
+    // Perfiles oficiales pendientes de entrega por la institución. Mientras la
+    // lista esté vacía se muestra un aviso en lugar de enlaces. Formato:
+    // { href: "https://www.facebook.com/<perfil>", label: "Facebook", icon: "fa-facebook" }
+    const SOCIAL_LINKS = [];
+    const SOCIAL_PENDING_TEXT = "Los perfiles oficiales en redes sociales estarán disponibles próximamente.";
 
-    const current = window.CURRENT_PAGE || "";
+    const current = document.body.dataset.page || "";
 
     function externalAttrs(item) {
         return item.external ? ' target="_blank" rel="noopener"' : "";
@@ -117,7 +118,7 @@
             <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar"></div></div>
             <header class="site-header">
                 <a href="/" class="logo">
-                    <img src="/assets/images/logo/logo-buchado.png" alt="Escudo de la ${INSTITUTION_NAME_FULL}" width="60" height="60">
+                    <img src="/assets/images/logo/logo-buchado-160.webp" srcset="/assets/images/logo/logo-buchado-96.webp 96w, /assets/images/logo/logo-buchado-160.webp 160w, /assets/images/logo/logo-buchado-320.webp 320w" sizes="60px" alt="Escudo de la ${INSTITUTION_NAME_FULL}" width="60" height="60">
                     <span class="logo-text">
                         <strong>${INSTITUTION_NAME_FULL}</strong>
                         <span>Institución Educativa Oficial</span>
@@ -135,18 +136,20 @@
     }
 
     function renderMobileNav() {
-        const socialLinks = SOCIAL_LINKS
-            .map((s) => `<a href="${s.href}" target="_blank" rel="noopener"><i class="fa ${s.icon}" aria-hidden="true"></i> ${s.label}</a>`)
-            .join("");
+        const socialLinks = SOCIAL_LINKS.length
+            ? SOCIAL_LINKS
+                .map((s) => `<a href="${s.href}" target="_blank" rel="noopener"><i class="fa ${s.icon}" aria-hidden="true"></i> ${s.label}</a>`)
+                .join("")
+            : `<p class="mobile-menu-note">${SOCIAL_PENDING_TEXT}</p>`;
 
         return `
-            <nav id="mobileMenu" class="mobile-menu" aria-label="Menú móvil" aria-hidden="true">
+            <nav id="mobileMenu" class="mobile-menu" aria-label="Menú móvil" aria-hidden="true" inert>
                 <button type="button" class="mobile-menu-close" aria-label="Cerrar menú">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </button>
                 <div class="mobile-menu-header">
-                    <img src="/assets/images/logo/logo-buchado.png" alt="" width="80" height="80">
-                    <h2>${INSTITUTION_NAME_FULL}</h2>
+                    <img src="/assets/images/logo/logo-buchado-160.webp" srcset="/assets/images/logo/logo-buchado-96.webp 96w, /assets/images/logo/logo-buchado-160.webp 160w, /assets/images/logo/logo-buchado-320.webp 320w" sizes="80px" alt="" width="80" height="80">
+                    <p class="mobile-menu-title">${INSTITUTION_NAME_FULL}</p>
                     <p>Institución Educativa Oficial</p>
                 </div>
                 <ul>
@@ -170,7 +173,7 @@
         return `
             <footer class="site-footer">
                 <div class="footer-top">
-                    <figure><img src="/assets/images/logo/logo-buchado.png" alt="" width="150" height="150"></figure>
+                    <figure><img src="/assets/images/logo/logo-buchado-160.webp" srcset="/assets/images/logo/logo-buchado-96.webp 96w, /assets/images/logo/logo-buchado-160.webp 160w, /assets/images/logo/logo-buchado-320.webp 320w" sizes="150px" alt="" width="150" height="150" loading="lazy"></figure>
                     <div>
                         <h2>${INSTITUTION_NAME_FULL}</h2>
                         <p>Formando ciudadanos con valores, conocimiento y compromiso desde nuestra comunidad educativa.</p>
@@ -183,12 +186,12 @@
                 <div class="footer-body">
                     <section>
                         <div class="logo">
-                            <img src="/assets/images/logo/logo-buchado.png" alt="" width="60" height="60" style="border-radius:50%">
+                            <img src="/assets/images/logo/logo-buchado-160.webp" srcset="/assets/images/logo/logo-buchado-96.webp 96w, /assets/images/logo/logo-buchado-160.webp 160w, /assets/images/logo/logo-buchado-320.webp 320w" sizes="60px" alt="" width="60" height="60" loading="lazy" style="border-radius:50%">
                             <span class="logo-text"><strong>${INSTITUTION_NAME_FULL}</strong><span>Institución Educativa Oficial</span></span>
                         </div>
                         <p><i class="fa fa-map-marker" aria-hidden="true"></i> Dirección de la institución (por definir)</p>
-                        <p><i class="fa fa-phone" aria-hidden="true"></i> (604) 123 4567</p>
-                        <p><i class="fa fa-envelope" aria-hidden="true"></i> contacto@buchado.edu.co</p>
+                        <p><i class="fa fa-phone" aria-hidden="true"></i> Teléfono institucional: disponible próximamente</p>
+                        <p><i class="fa fa-envelope" aria-hidden="true"></i> Correo institucional: disponible próximamente</p>
                         <p><i class="fa fa-clock-o" aria-hidden="true"></i> Lunes a viernes · 7:00 a. m. – 4:00 p. m.</p>
                     </section>
                     <section>
@@ -210,15 +213,12 @@
                 </div>
                 <div class="footer-bottom">
                     <p>© 2026 ${INSTITUTION_NAME_FULL}. Todos los derechos reservados.</p>
-                    <div class="footer-legal">
-                        <a href="#">Aviso de privacidad</a>
-                        <a href="#">Términos de uso</a>
-                        <a href="#">Mapa del sitio</a>
-                    </div>
+                    <!-- Pendiente institucional: política de tratamiento de datos, aviso de
+                         privacidad y términos de uso. Enlazarlos cuando existan. -->
+                    <p class="footer-legal">Política de tratamiento de datos y términos de uso: en preparación.</p>
                     <div class="footer-social">
-                        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                        <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                        ${SOCIAL_LINKS.map((s) => `<a href="${s.href}" target="_blank" rel="noopener" aria-label="${s.label}"><i class="fa ${s.icon}" aria-hidden="true"></i></a>`).join("")}
+                        ${SOCIAL_LINKS.length ? "" : `<span class="footer-social-note">Redes sociales oficiales: próximamente</span>`}
                         <a href="/contacto" aria-label="Contacto"><i class="fa fa-envelope" aria-hidden="true"></i></a>
                     </div>
                 </div>
@@ -228,9 +228,16 @@
 
     const headerMount = document.getElementById("site-header-mount");
     const mobileMount = document.getElementById("mobile-nav-mount");
-    const footerMount = document.getElementById("site-footer-mount");
 
     if (headerMount) headerMount.outerHTML = renderHeader();
     if (mobileMount) mobileMount.outerHTML = renderMobileNav();
-    if (footerMount) footerMount.outerHTML = renderFooter();
+
+    // El script se carga justo después de los contenedores del encabezado;
+    // el del pie aún no existe en ese momento, así que se completa al final.
+    function mountFooter() {
+        const footerMount = document.getElementById("site-footer-mount");
+        if (footerMount) footerMount.outerHTML = renderFooter();
+    }
+    if (document.getElementById("site-footer-mount")) mountFooter();
+    else document.addEventListener("DOMContentLoaded", mountFooter);
 })();

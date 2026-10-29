@@ -19,7 +19,7 @@
 }
 
 .academic-banner p {
-    color: rgba(255, 255, 255, .9);
+    color: #fff; /* blanco pleno: el degradado claro exige 4,5:1 */
     max-width: 640px;
     margin: 0 auto;
 }

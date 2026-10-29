@@ -6,3 +6,8 @@ node_modules
 .env*
 !.env.example
 .claude
+
+# Informes internos de auditoría y documentos de trabajo: no se publican
+# (los repositorios son públicos y Vercel serviría estos archivos).
+auditoria-iebfba/
+Pendientes_sitio_web_IE_Buchado.pdf

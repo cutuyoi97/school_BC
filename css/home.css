@@ -11,13 +11,28 @@
     min-height: 80vh;
     background:
         linear-gradient(to right, rgba(0, 10, 25, .88) 20%, rgba(0, 10, 25, .55) 60%, rgba(0, 10, 25, .25) 100%),
-        url("/assets/images/sedes/sede-principal-sala-informatica.jpg") center/cover no-repeat;
+        url("/assets/images/sedes/sede-principal-sala-informatica-1200.webp") center/cover no-repeat;
     color: #fff;
+}
+
+/* Imagen de fondo (elemento LCP): WebP de 800 px en pantallas pequeñas.
+   Debe coincidir con los <link rel="preload"> de index.html. */
+@media (max-width: 800px) {
+    .hero {
+        background:
+            linear-gradient(to right, rgba(0, 10, 25, .88) 20%, rgba(0, 10, 25, .55) 60%, rgba(0, 10, 25, .25) 100%),
+            url("/assets/images/sedes/sede-principal-sala-informatica-800.webp") center/cover no-repeat;
+    }
 }
 
 .hero-content {
     width: min(620px, 90%);
     padding: 6rem 2rem;
+}
+
+/* Azul institucional aclarado (antes #3399ff, 3,8:1 sobre la foto oscurecida). */
+.hero-content .eyebrow {
+    color: #80bfff;
 }
 
 .hero-content h1 {
@@ -145,7 +160,7 @@
 }
 
 .event-preview-card p {
-    color: rgba(255, 255, 255, .88);
+    color: #fff;
     margin-bottom: 24px;
 }
 
@@ -157,7 +172,8 @@
 }
 
 .event-countdown .time-box {
-    background: rgba(255, 255, 255, .14);
+    /* Oscurece en lugar de aclarar: el texto blanco pequeño necesita 4,5:1. */
+    background: rgba(0, 0, 0, .12);
     border-radius: 14px;
     padding: 16px 8px;
     text-align: center;
@@ -175,7 +191,7 @@
 .event-countdown .time-box small {
     display: block;
     margin-top: 6px;
-    color: rgba(255, 255, 255, .85);
+    color: #fff;
     font-size: .78rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -228,7 +244,7 @@
     flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 20px;
-    color: rgba(255, 255, 255, .85);
+    color: #fff;
     font-size: .9rem;
 }
 
@@ -380,6 +396,17 @@
 
 .news-card:hover img {
     transform: scale(1.08);
+}
+
+/* Tarjetas sin enlace (noticias sin página de detalle): sin efecto de "clic". */
+article.news-card:hover {
+    transform: translateY(0);
+    translate: none;
+    box-shadow: var(--shadow-sm);
+}
+
+article.news-card:hover img {
+    transform: none;
 }
 
 .news-card-overlay {

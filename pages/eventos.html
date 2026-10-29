@@ -12,17 +12,20 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Eventos y Centros de Interés — Institución Educativa Rural Buchadó Fernando Botero Angulo">
     <meta property="og:description" content="Centros de interés, próximos eventos y galería de nuestra comunidad educativa.">
-    <meta property="og:image" content="/assets/images/logo/logo-buchado.png">
+    <meta property="og:image" content="https://www.iebfba.edu.co/assets/images/logo/logo-buchado.png">
     <meta property="og:url" content="https://www.iebfba.edu.co/eventos">
 
-    <link rel="icon" type="image/png" href="/assets/images/logo/logo-buchado.png">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/logo/logo-buchado-192.png">
+    <link rel="apple-touch-icon" href="/assets/images/logo/apple-touch-icon.png">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mukta:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preload" as="image" href="/assets/images/comunidad/estudiantes-flores-800.webp" media="(max-width: 800px)" fetchpriority="high">
+    <link rel="preload" as="image" href="/assets/images/comunidad/estudiantes-flores-1200.webp" media="(min-width: 801px)" fetchpriority="high">
+    <link rel="preload" href="/assets/fonts/mukta/mukta-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/kanit/kanit-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/font-awesome/fontawesome-webfont.woff2?v=4.7.0" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/components.css">
@@ -30,10 +33,11 @@
     <link rel="stylesheet" href="/css/eventos.css">
 </head>
 
-<body>
-    <script>window.CURRENT_PAGE = "eventos";</script>
+<body data-page="eventos">
     <div id="site-header-mount"></div>
     <div id="mobile-nav-mount"></div>
+    <!-- Síncrono y antes del contenido: el encabezado existe desde el primer pintado (sin CLS). -->
+    <script src="/js/layout.js"></script>
 
     <main id="main-content">
         <!-- BANNER -->
@@ -70,7 +74,7 @@
                 <ul class="ci-grid" role="list">
                     <li class="card ci-card ci-card--artes">
                         <figure class="ci-card-media">
-                            <img src="/assets/images/comunidad/danza-tradicional.jpg"
+                            <img src="/assets/images/comunidad/danza-tradicional-800.webp" srcset="/assets/images/comunidad/danza-tradicional-480.webp 480w, /assets/images/comunidad/danza-tradicional-800.webp 800w, /assets/images/comunidad/danza-tradicional-1200.webp 1200w, /assets/images/comunidad/danza-tradicional-1600.webp 1600w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="600"
                                 alt="Estudiantes con trajes típicos durante una presentación de danza tradicional"
                                 width="1600" height="1200" loading="lazy" decoding="async">
                         </figure>
@@ -89,7 +93,7 @@
 
                     <li class="card ci-card ci-card--espacio">
                         <figure class="ci-card-media">
-                            <img src="/assets/images/sedes/sede-principal-patio.jpg"
+                            <img src="/assets/images/sedes/sede-principal-patio-800.webp" srcset="/assets/images/sedes/sede-principal-patio-480.webp 480w, /assets/images/sedes/sede-principal-patio-800.webp 800w, /assets/images/sedes/sede-principal-patio-1200.webp 1200w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="600"
                                 alt="Patio cubierto y corredores de la Sede Principal"
                                 width="1280" height="960" loading="lazy" decoding="async">
                         </figure>
@@ -108,7 +112,7 @@
 
                     <li class="card ci-card ci-card--juegos">
                         <figure class="ci-card-media">
-                            <img src="/assets/images/comunidad/actividad-grupal.jpg"
+                            <img src="/assets/images/comunidad/actividad-grupal-800.webp" srcset="/assets/images/comunidad/actividad-grupal-480.webp 480w, /assets/images/comunidad/actividad-grupal-800.webp 800w, /assets/images/comunidad/actividad-grupal-1200.webp 1200w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="602"
                                 alt="Estudiantes sentados en círculo en el corredor, con una compañera de pie en el centro durante una actividad grupal"
                                 width="1280" height="963" loading="lazy" decoding="async">
                         </figure>
@@ -127,7 +131,7 @@
 
                     <li class="card ci-card ci-card--emprendimiento">
                         <figure class="ci-card-media">
-                            <img src="/assets/images/comunidad/manualidades.jpg"
+                            <img src="/assets/images/comunidad/manualidades-800.webp" srcset="/assets/images/comunidad/manualidades-480.webp 480w, /assets/images/comunidad/manualidades-800.webp 800w, /assets/images/comunidad/manualidades-963.webp 963w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="1063"
                                 alt="Estudiantes elaborando abanicos a mano en una actividad práctica"
                                 width="963" height="1280" loading="lazy" decoding="async">
                         </figure>
@@ -313,7 +317,7 @@
         <section class="section" style="background:var(--color-surface)">
             <div class="container featured-event">
                 <div class="featured-event-image">
-                    <img src="/assets/images/comunidad/danza-tradicional.jpg" alt="Estudiantes con trajes típicos de falda blanca y franjas amarillo, azul y rojo durante una presentación de danza tradicional">
+                    <img decoding="async" src="/assets/images/comunidad/danza-tradicional-800.webp" srcset="/assets/images/comunidad/danza-tradicional-480.webp 480w, /assets/images/comunidad/danza-tradicional-800.webp 800w, /assets/images/comunidad/danza-tradicional-1200.webp 1200w, /assets/images/comunidad/danza-tradicional-1600.webp 1600w" sizes="(max-width: 768px) 92vw, 640px" width="800" height="600" alt="Estudiantes con trajes típicos de falda blanca y franjas amarillo, azul y rojo durante una presentación de danza tradicional">
                 </div>
                 <div class="featured-event-content">
                     <span class="badge badge--institutional">Próximo evento</span>
@@ -366,7 +370,7 @@
         <section class="section--tight" id="eventos-grid">
             <div class="container events-grid">
                 <article class="card event-card" data-category="proximo">
-                    <img src="/assets/images/sedes/sede-principal-corredor.jpg" alt="Estudiantes en el corredor de aulas de la Sede Principal">
+                    <img decoding="async" src="/assets/images/sedes/sede-principal-corredor-800.webp" srcset="/assets/images/sedes/sede-principal-corredor-480.webp 480w, /assets/images/sedes/sede-principal-corredor-800.webp 800w, /assets/images/sedes/sede-principal-corredor-1200.webp 1200w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="450" alt="Estudiantes en el corredor de aulas de la Sede Principal">
                     <div class="event-card-body">
                         <span class="badge badge--academic">Académico</span>
                         <h3>Inicio de clases</h3>
@@ -379,7 +383,7 @@
                 </article>
 
                 <article class="card event-card" data-category="proximo">
-                    <img src="/assets/images/comunidad/estudiantes-abanicos.jpg" alt="Estudiantes presentando abanicos elaborados en una muestra cultural" style="object-position:center 25%">
+                    <img decoding="async" src="/assets/images/comunidad/estudiantes-abanicos-800.webp" srcset="/assets/images/comunidad/estudiantes-abanicos-480.webp 480w, /assets/images/comunidad/estudiantes-abanicos-800.webp 800w, /assets/images/comunidad/estudiantes-abanicos-963.webp 963w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="1063" alt="Estudiantes presentando abanicos elaborados en una muestra cultural" style="object-position:center 25%">
                     <div class="event-card-body">
                         <span class="badge badge--cultural">Cultural</span>
                         <h3>Semana Cultural</h3>
@@ -392,7 +396,7 @@
                 </article>
 
                 <article class="card event-card" data-category="realizado">
-                    <img src="/assets/images/logo/escudo-colegio.png" alt="Escudo institucional de la Institución Educativa Rural Buchadó Fernando Botero Angulo">
+                    <img decoding="async" src="/assets/images/logo/escudo-colegio-300.webp" srcset="/assets/images/logo/escudo-colegio-300.webp 300w, /assets/images/logo/escudo-colegio-586.webp 586w" sizes="(max-width: 768px) 92vw, 586px" width="586" height="530" alt="Escudo institucional de la Institución Educativa Rural Buchadó Fernando Botero Angulo">
                     <div class="event-card-body">
                         <span class="badge badge--sports">Deportes</span>
                         <h3>Olimpiadas</h3>
@@ -405,7 +409,7 @@
                 </article>
 
                 <article class="card event-card" data-category="realizado">
-                    <img src="/assets/images/logo/escudo-colegio.png" alt="Escudo institucional de la Institución Educativa Rural Buchadó Fernando Botero Angulo">
+                    <img decoding="async" src="/assets/images/logo/escudo-colegio-300.webp" srcset="/assets/images/logo/escudo-colegio-300.webp 300w, /assets/images/logo/escudo-colegio-586.webp 586w" sizes="(max-width: 768px) 92vw, 586px" width="586" height="530" alt="Escudo institucional de la Institución Educativa Rural Buchadó Fernando Botero Angulo">
                     <div class="event-card-body">
                         <span class="badge badge--important">Institucional</span>
                         <h3>Día de la Familia</h3>
@@ -430,27 +434,27 @@
                 <div class="gallery-grid">
                     <button type="button" data-gallery-item data-full="/assets/images/comunidad/danza-tradicional.jpg"
                         aria-label="Ver imagen ampliada: presentación de danza tradicional con trajes típicos">
-                        <img src="/assets/images/comunidad/danza-tradicional.jpg" alt="" loading="lazy">
+                        <img decoding="async" src="/assets/images/comunidad/danza-tradicional-800.webp" srcset="/assets/images/comunidad/danza-tradicional-480.webp 480w, /assets/images/comunidad/danza-tradicional-800.webp 800w, /assets/images/comunidad/danza-tradicional-1200.webp 1200w, /assets/images/comunidad/danza-tradicional-1600.webp 1600w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="600" alt="" loading="lazy">
                     </button>
                     <button type="button" data-gallery-item data-full="/assets/images/comunidad/estudiantes-flores.jpg"
                         aria-label="Ver imagen ampliada: estudiantes con flores de papel elaboradas en clase">
-                        <img src="/assets/images/comunidad/estudiantes-flores.jpg" alt="" loading="lazy">
+                        <img decoding="async" src="/assets/images/comunidad/estudiantes-flores-800.webp" srcset="/assets/images/comunidad/estudiantes-flores-480.webp 480w, /assets/images/comunidad/estudiantes-flores-800.webp 800w, /assets/images/comunidad/estudiantes-flores-1200.webp 1200w, /assets/images/comunidad/estudiantes-flores-1599.webp 1599w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="450" alt="" loading="lazy">
                     </button>
                     <button type="button" data-gallery-item data-full="/assets/images/comunidad/manualidades.jpg"
                         aria-label="Ver imagen ampliada: estudiantes elaborando abanicos con material reciclado">
-                        <img src="/assets/images/comunidad/manualidades.jpg" alt="" loading="lazy">
+                        <img decoding="async" src="/assets/images/comunidad/manualidades-800.webp" srcset="/assets/images/comunidad/manualidades-480.webp 480w, /assets/images/comunidad/manualidades-800.webp 800w, /assets/images/comunidad/manualidades-963.webp 963w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="1063" alt="" loading="lazy">
                     </button>
                     <button type="button" data-gallery-item data-full="/assets/images/comunidad/actividad-grupal.jpg"
                         aria-label="Ver imagen ampliada: actividad grupal de estudiantes en el corredor">
-                        <img src="/assets/images/comunidad/actividad-grupal.jpg" alt="" loading="lazy">
+                        <img decoding="async" src="/assets/images/comunidad/actividad-grupal-800.webp" srcset="/assets/images/comunidad/actividad-grupal-480.webp 480w, /assets/images/comunidad/actividad-grupal-800.webp 800w, /assets/images/comunidad/actividad-grupal-1200.webp 1200w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="602" alt="" loading="lazy">
                     </button>
                     <button type="button" data-gallery-item data-full="/assets/images/comunidad/estudiantes-abanicos.jpg"
                         aria-label="Ver imagen ampliada: estudiantes presentando sus abanicos">
-                        <img src="/assets/images/comunidad/estudiantes-abanicos.jpg" alt="" loading="lazy">
+                        <img decoding="async" src="/assets/images/comunidad/estudiantes-abanicos-800.webp" srcset="/assets/images/comunidad/estudiantes-abanicos-480.webp 480w, /assets/images/comunidad/estudiantes-abanicos-800.webp 800w, /assets/images/comunidad/estudiantes-abanicos-963.webp 963w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="1063" alt="" loading="lazy">
                     </button>
                     <button type="button" data-gallery-item data-full="/assets/images/comunidad/estudiante-escribiendo.jpg"
                         aria-label="Ver imagen ampliada: estudiante desarrollando una guía de trabajo">
-                        <img src="/assets/images/comunidad/estudiante-escribiendo.jpg" alt="" loading="lazy">
+                        <img decoding="async" src="/assets/images/comunidad/estudiante-escribiendo-800.webp" srcset="/assets/images/comunidad/estudiante-escribiendo-480.webp 480w, /assets/images/comunidad/estudiante-escribiendo-800.webp 800w, /assets/images/comunidad/estudiante-escribiendo-960.webp 960w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="1067" alt="" loading="lazy">
                     </button>
                 </div>
             </div>
@@ -465,11 +469,12 @@
                     <p>Mantente informado sobre las actividades más recientes de nuestra institución.</p>
                 </div>
 
+                <!-- Pendiente institucional: noticias reales con página de detalle. Mientras tanto
+                     las tarjetas no son enlaces (antes href="#"). -->
                 <div class="news-grid">
-                    <a href="#" class="card news-card">
+                    <article class="card news-card">
                         <figure>
-                            <img src="/assets/images/sedes/sede-principal-corredor.jpg" alt="" loading="lazy">
-                            <span class="news-card-overlay"><span>Leer más →</span></span>
+                            <img decoding="async" src="/assets/images/sedes/sede-principal-corredor-800.webp" srcset="/assets/images/sedes/sede-principal-corredor-480.webp 480w, /assets/images/sedes/sede-principal-corredor-800.webp 800w, /assets/images/sedes/sede-principal-corredor-1200.webp 1200w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="450" alt="" loading="lazy">
                         </figure>
                         <div class="news-card-body">
                             <span class="badge badge--academic">Académico</span>
@@ -480,12 +485,11 @@
                                 <span>2 min</span>
                             </div>
                         </div>
-                    </a>
+                    </article>
 
-                    <a href="#" class="card news-card">
+                    <article class="card news-card">
                         <figure>
-                            <img src="/assets/images/comunidad/danza-tradicional.jpg" alt="" loading="lazy">
-                            <span class="news-card-overlay"><span>Leer más →</span></span>
+                            <img decoding="async" src="/assets/images/comunidad/danza-tradicional-800.webp" srcset="/assets/images/comunidad/danza-tradicional-480.webp 480w, /assets/images/comunidad/danza-tradicional-800.webp 800w, /assets/images/comunidad/danza-tradicional-1200.webp 1200w, /assets/images/comunidad/danza-tradicional-1600.webp 1600w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="600" alt="" loading="lazy">
                         </figure>
                         <div class="news-card-body">
                             <span class="badge badge--institutional">Eventos</span>
@@ -496,12 +500,11 @@
                                 <span>3 min</span>
                             </div>
                         </div>
-                    </a>
+                    </article>
 
-                    <a href="#" class="card news-card">
+                    <article class="card news-card">
                         <figure>
-                            <img src="/assets/images/logo/escudo-colegio.png" alt="" loading="lazy">
-                            <span class="news-card-overlay"><span>Leer más →</span></span>
+                            <img decoding="async" src="/assets/images/logo/escudo-colegio-300.webp" srcset="/assets/images/logo/escudo-colegio-300.webp 300w, /assets/images/logo/escudo-colegio-586.webp 586w" sizes="(max-width: 768px) 92vw, 586px" width="586" height="530" alt="" loading="lazy">
                         </figure>
                         <div class="news-card-body">
                             <span class="badge badge--sports">Deportes</span>
@@ -512,12 +515,11 @@
                                 <span>4 min</span>
                             </div>
                         </div>
-                    </a>
+                    </article>
 
-                    <a href="#" class="card news-card">
+                    <article class="card news-card">
                         <figure>
-                            <img src="/assets/images/sedes/sede-principal-pabellones.jpg" alt="" loading="lazy">
-                            <span class="news-card-overlay"><span>Leer más →</span></span>
+                            <img decoding="async" src="/assets/images/sedes/sede-principal-pabellones-800.webp" srcset="/assets/images/sedes/sede-principal-pabellones-480.webp 480w, /assets/images/sedes/sede-principal-pabellones-800.webp 800w, /assets/images/sedes/sede-principal-pabellones-1200.webp 1200w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="600" alt="" loading="lazy">
                         </figure>
                         <div class="news-card-body">
                             <span class="badge badge--important">Importante</span>
@@ -528,7 +530,7 @@
                                 <span>5 min</span>
                             </div>
                         </div>
-                    </a>
+                    </article>
                 </div>
             </div>
         </section>
@@ -539,12 +541,11 @@
         <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Cerrar imagen">
             <i class="fa fa-times" aria-hidden="true"></i>
         </button>
-        <img id="lightboxImage" src="" alt="">
+        <img id="lightboxImage" alt="">
     </div>
 
     <div id="site-footer-mount"></div>
 
-    <script src="/js/layout.js"></script>
     <script src="/js/navigation.js"></script>
     <script type="module" src="/js/events.js"></script>
 </body>

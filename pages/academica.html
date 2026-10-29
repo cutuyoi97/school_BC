@@ -12,27 +12,29 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Información Académica e Institucional — Institución Educativa Rural Buchadó Fernando Botero Angulo">
     <meta property="og:description" content="PEI, calendario institucional, proceso de matrícula y acceso a SEDUCA.">
-    <meta property="og:image" content="/assets/images/logo/logo-buchado.png">
+    <meta property="og:image" content="https://www.iebfba.edu.co/assets/images/logo/logo-buchado.png">
     <meta property="og:url" content="https://www.iebfba.edu.co/academica">
 
-    <link rel="icon" type="image/png" href="/assets/images/logo/logo-buchado.png">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/logo/logo-buchado-192.png">
+    <link rel="apple-touch-icon" href="/assets/images/logo/apple-touch-icon.png">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mukta:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preload" href="/assets/fonts/mukta/mukta-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/kanit/kanit-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/font-awesome/fontawesome-webfont.woff2?v=4.7.0" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/components.css">
     <link rel="stylesheet" href="/css/academica.css">
 </head>
 
-<body>
-    <script>window.CURRENT_PAGE = "academica";</script>
+<body data-page="academica">
     <div id="site-header-mount"></div>
     <div id="mobile-nav-mount"></div>
+    <!-- Síncrono y antes del contenido: el encabezado existe desde el primer pintado (sin CLS). -->
+    <script src="/js/layout.js"></script>
 
     <main id="main-content">
         <section class="academic-banner">
@@ -113,7 +115,7 @@
                         <span class="badge badge--secondary">Básica Primaria — Docente monodocente</span>
                     </div>
                     <figure class="primary-level-photo">
-                        <img src="/assets/images/comunidad/estudiante-escribiendo.jpg"
+                        <img decoding="async" src="/assets/images/comunidad/estudiante-escribiendo-800.webp" srcset="/assets/images/comunidad/estudiante-escribiendo-480.webp 480w, /assets/images/comunidad/estudiante-escribiendo-800.webp 800w, /assets/images/comunidad/estudiante-escribiendo-960.webp 960w" sizes="(max-width: 768px) 92vw, 640px" width="800" height="1067"
                             alt="Estudiante de primaria resolviendo una guía de trabajo en su pupitre" loading="lazy">
                     </figure>
                 </div>
@@ -229,10 +231,11 @@
 
     <div id="site-footer-mount"></div>
 
-    <script src="/js/layout.js"></script>
-    <script src="/js/navigation.js"></script>
+    <!-- Las tarjetas se generan antes que el pie (que layout.js inserta al
+         terminar el análisis del documento): así el pie no se desplaza (CLS). -->
     <script src="/js/data/docentes.js"></script>
     <script src="/js/academica.js"></script>
+    <script src="/js/navigation.js"></script>
 </body>
 
 </html>

@@ -33,19 +33,24 @@
         const getFocusable = () =>
             mobileMenu.querySelectorAll('a[href], button:not([disabled])');
 
+        // Cerrado, el menú es `inert` (además de visibility:hidden en CSS):
+        // sus enlaces no reciben foco ni los anuncian los lectores de pantalla.
         function openMenu() {
+            mobileMenu.inert = false;
             mobileMenu.classList.add("is-open");
             mobileMenu.removeAttribute("aria-hidden");
             overlay?.classList.add("is-visible");
             navToggle.setAttribute("aria-expanded", "true");
             document.body.style.overflow = "hidden";
-            const focusable = getFocusable();
-            focusable[0]?.focus();
+            // Se enfoca en la siguiente tarea: hasta que el navegador aplica la
+            // nueva visibilidad, los elementos del menú aún no son enfocables.
+            setTimeout(() => getFocusable()[0]?.focus(), 0);
         }
 
         function closeMenu({ restoreFocus = true } = {}) {
             mobileMenu.classList.remove("is-open");
             mobileMenu.setAttribute("aria-hidden", "true");
+            mobileMenu.inert = true;
             overlay?.classList.remove("is-visible");
             navToggle.setAttribute("aria-expanded", "false");
             document.body.style.overflow = "";
@@ -113,6 +118,9 @@
         if (!toggle) return;
 
         let closeTimer = null;
+        // true mientras el submenú está abierto solo por hover: un clic en la
+        // flecha en ese estado lo "fija" abierto en lugar de cerrarlo.
+        let openedByHover = false;
 
         function open() {
             clearTimeout(closeTimer);
@@ -126,6 +134,7 @@
             closeTimer = setTimeout(() => {
                 dropdown.classList.remove("is-open");
                 toggle.setAttribute("aria-expanded", "false");
+                openedByHover = false;
             }, CLOSE_DELAY_MS);
         }
 
@@ -133,7 +142,9 @@
         // entrar, programa el cierre al salir del grupo completo
         // (enlace + botón + panel), y lo cancela si vuelve a entrar.
         dropdown.addEventListener("mouseenter", () => {
-            if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) open();
+            if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+            if (!dropdown.classList.contains("is-open")) openedByHover = true;
+            open();
         });
         dropdown.addEventListener("mouseleave", () => {
             if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) scheduleClose();
@@ -144,12 +155,13 @@
             event.stopPropagation();
             const isOpen = dropdown.classList.contains("is-open");
             clearTimeout(closeTimer);
-            if (isOpen) {
+            if (isOpen && !openedByHover) {
                 dropdown.classList.remove("is-open");
                 toggle.setAttribute("aria-expanded", "false");
             } else {
                 open();
             }
+            openedByHover = false;
         });
     });
 

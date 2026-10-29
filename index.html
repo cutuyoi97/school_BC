@@ -13,33 +13,37 @@
     <meta property="og:title" content="Institución Educativa Rural Buchadó Fernando Botero Angulo">
     <meta property="og:description"
         content="Educación que construye futuro. Conoce nuestra institución, eventos y comunidad educativa.">
-    <meta property="og:image" content="/assets/images/logo/logo-buchado.png">
+    <meta property="og:image" content="https://www.iebfba.edu.co/assets/images/logo/logo-buchado.png">
     <meta property="og:url" content="https://www.iebfba.edu.co/">
 
-    <link rel="icon" type="image/png" href="/assets/images/logo/logo-buchado.png">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/logo/logo-buchado-192.png">
+    <link rel="apple-touch-icon" href="/assets/images/logo/apple-touch-icon.png">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mukta:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preload" as="image" href="/assets/images/sedes/sede-principal-sala-informatica-800.webp" media="(max-width: 800px)" fetchpriority="high">
+    <link rel="preload" as="image" href="/assets/images/sedes/sede-principal-sala-informatica-1200.webp" media="(min-width: 801px)" fetchpriority="high">
+    <link rel="preload" href="/assets/fonts/mukta/mukta-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/kanit/kanit-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/font-awesome/fontawesome-webfont.woff2?v=4.7.0" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/components.css">
     <link rel="stylesheet" href="/css/home.css">
 </head>
 
-<body>
-    <script>window.CURRENT_PAGE = "home";</script>
+<body data-page="home">
     <div id="site-header-mount"></div>
     <div id="mobile-nav-mount"></div>
+    <!-- Síncrono y antes del contenido: el encabezado existe desde el primer pintado (sin CLS). -->
+    <script src="/js/layout.js"></script>
 
     <main id="main-content">
         <!-- HERO -->
         <section class="hero">
             <div class="hero-content">
-                <span class="eyebrow" style="color:var(--color-primary-light)">Institución Educativa Rural Buchadó Fernando Botero Angulo</span>
+                <span class="eyebrow">Institución Educativa Rural Buchadó Fernando Botero Angulo</span>
                 <h1>Educación que construye futuro</h1>
                 <p>Conoce nuestra institución y nuestra comunidad educativa, comprometida con la formación integral
                     de niños y jóvenes a través de valores, conocimiento y compromiso social.</p>
@@ -215,7 +219,7 @@
 
                 <div class="community-gallery">
                     <figure class="community-gallery-item">
-                        <img src="/assets/images/sedes/sede-arenal-estudiantes.jpg" alt="Estudiantes de la Sede Arenal trabajando en sus pupitres durante una clase"
+                        <img decoding="async" src="/assets/images/sedes/sede-arenal-estudiantes-800.webp" srcset="/assets/images/sedes/sede-arenal-estudiantes-480.webp 480w, /assets/images/sedes/sede-arenal-estudiantes-800.webp 800w, /assets/images/sedes/sede-arenal-estudiantes-960.webp 960w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="1067" alt="Estudiantes de la Sede Arenal trabajando en sus pupitres durante una clase"
                             loading="lazy">
                         <figcaption>
                             <strong>Excelencia</strong>
@@ -223,7 +227,7 @@
                         </figcaption>
                     </figure>
                     <figure class="community-gallery-item">
-                        <img src="/assets/images/comunidad/manualidades.jpg" alt="Estudiantes elaborando abanicos con material reciclado en una actividad manual"
+                        <img decoding="async" src="/assets/images/comunidad/manualidades-800.webp" srcset="/assets/images/comunidad/manualidades-480.webp 480w, /assets/images/comunidad/manualidades-800.webp 800w, /assets/images/comunidad/manualidades-963.webp 963w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="1063" alt="Estudiantes elaborando abanicos con material reciclado en una actividad manual"
                             loading="lazy">
                         <figcaption>
                             <strong>Creatividad</strong>
@@ -231,14 +235,14 @@
                         </figcaption>
                     </figure>
                     <figure class="community-gallery-item">
-                        <img src="/assets/images/comunidad/actividad-grupal.jpg" alt="Estudiantes reunidos en círculo durante una actividad grupal en el corredor de la institución" loading="lazy">
+                        <img decoding="async" src="/assets/images/comunidad/actividad-grupal-800.webp" srcset="/assets/images/comunidad/actividad-grupal-480.webp 480w, /assets/images/comunidad/actividad-grupal-800.webp 800w, /assets/images/comunidad/actividad-grupal-1200.webp 1200w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="602" alt="Estudiantes reunidos en círculo durante una actividad grupal en el corredor de la institución" loading="lazy">
                         <figcaption>
                             <strong>Trabajo en equipo</strong>
                             <span>Creciendo juntos</span>
                         </figcaption>
                     </figure>
                     <figure class="community-gallery-item">
-                        <img src="/assets/images/comunidad/estudiante-escribiendo.jpg" alt="Estudiante resolviendo una guía de trabajo en su pupitre"
+                        <img decoding="async" src="/assets/images/comunidad/estudiante-escribiendo-800.webp" srcset="/assets/images/comunidad/estudiante-escribiendo-480.webp 480w, /assets/images/comunidad/estudiante-escribiendo-800.webp 800w, /assets/images/comunidad/estudiante-escribiendo-960.webp 960w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="1067" alt="Estudiante resolviendo una guía de trabajo en su pupitre"
                             loading="lazy">
                         <figcaption>
                             <strong>Futuro</strong>
@@ -261,7 +265,7 @@
                 <div class="news-grid">
                     <a href="/eventos" class="card news-card">
                         <figure>
-                            <img src="/assets/images/sedes/sede-principal-corredor.jpg" alt="" loading="lazy">
+                            <img decoding="async" src="/assets/images/sedes/sede-principal-corredor-800.webp" srcset="/assets/images/sedes/sede-principal-corredor-480.webp 480w, /assets/images/sedes/sede-principal-corredor-800.webp 800w, /assets/images/sedes/sede-principal-corredor-1200.webp 1200w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="450" alt="" loading="lazy">
                             <span class="news-card-overlay"><span>Leer más →</span></span>
                         </figure>
                         <div class="news-card-body">
@@ -277,7 +281,7 @@
 
                     <a href="/eventos" class="card news-card">
                         <figure>
-                            <img src="/assets/images/comunidad/danza-tradicional.jpg" alt="" loading="lazy">
+                            <img decoding="async" src="/assets/images/comunidad/danza-tradicional-800.webp" srcset="/assets/images/comunidad/danza-tradicional-480.webp 480w, /assets/images/comunidad/danza-tradicional-800.webp 800w, /assets/images/comunidad/danza-tradicional-1200.webp 1200w, /assets/images/comunidad/danza-tradicional-1600.webp 1600w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="600" alt="" loading="lazy">
                             <span class="news-card-overlay"><span>Leer más →</span></span>
                         </figure>
                         <div class="news-card-body">
@@ -293,7 +297,7 @@
 
                     <a href="/eventos" class="card news-card">
                         <figure>
-                            <img src="/assets/images/logo/escudo-colegio.png" alt="" loading="lazy">
+                            <img decoding="async" src="/assets/images/logo/escudo-colegio-300.webp" srcset="/assets/images/logo/escudo-colegio-300.webp 300w, /assets/images/logo/escudo-colegio-586.webp 586w" sizes="(max-width: 768px) 92vw, 586px" width="586" height="530" alt="" loading="lazy">
                             <span class="news-card-overlay"><span>Leer más →</span></span>
                         </figure>
                         <div class="news-card-body">
@@ -309,7 +313,7 @@
 
                     <a href="/eventos" class="card news-card">
                         <figure>
-                            <img src="/assets/images/sedes/sede-principal-pabellones.jpg" alt="" loading="lazy">
+                            <img decoding="async" src="/assets/images/sedes/sede-principal-pabellones-800.webp" srcset="/assets/images/sedes/sede-principal-pabellones-480.webp 480w, /assets/images/sedes/sede-principal-pabellones-800.webp 800w, /assets/images/sedes/sede-principal-pabellones-1200.webp 1200w" sizes="(max-width: 768px) 92vw, 400px" width="800" height="600" alt="" loading="lazy">
                             <span class="news-card-overlay"><span>Leer más →</span></span>
                         </figure>
                         <div class="news-card-body">
@@ -340,64 +344,64 @@
                          ancho que cualquier pantalla y el ciclo nunca deje un espacio
                          vacío antes de reiniciar (no eliminar las repeticiones). -->
                     <a href="https://www.antioquia.gov.co/" target="_blank" rel="noopener">
-                        <img src="/assets/images/institucional/logo-gobernacion-antioquia.png"
+                        <img src="/assets/images/institucional/logo-gobernacion-antioquia.png" width="1406" height="384" decoding="async"
                             alt="Gobernación de Antioquia">
                     </a>
                     <a href="https://mintic.gov.co/" target="_blank" rel="noopener">
-                        <img src="/assets/images/institucional/logo-mintic-full.png"
+                        <img src="/assets/images/institucional/logo-mintic-full.png" width="900" height="232" decoding="async"
                             alt="MinTIC — Ministerio de Tecnologías de la Información y las Comunicaciones">
                     </a>
                     <a href="https://www.seduca.gov.co" target="_blank" rel="noopener">
-                        <img src="/assets/images/institucional/logo-seduca.png"
+                        <img src="/assets/images/institucional/logo-seduca.png" width="293" height="129" decoding="async"
                             alt="SEDUCA — Secretaría de Educación de Antioquia">
                     </a>
                     <a href="https://www.antioquia.gov.co/" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-gobernacion-antioquia.png" alt="">
+                        <img src="/assets/images/institucional/logo-gobernacion-antioquia.png" width="1406" height="384" decoding="async" alt="">
                     </a>
                     <a href="https://mintic.gov.co/" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-mintic-full.png" alt="">
+                        <img src="/assets/images/institucional/logo-mintic-full.png" width="900" height="232" decoding="async" alt="">
                     </a>
                     <a href="https://www.seduca.gov.co" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-seduca.png" alt="">
+                        <img src="/assets/images/institucional/logo-seduca.png" width="293" height="129" decoding="async" alt="">
                     </a>
                     <a href="https://www.antioquia.gov.co/" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-gobernacion-antioquia.png" alt="">
+                        <img src="/assets/images/institucional/logo-gobernacion-antioquia.png" width="1406" height="384" decoding="async" alt="">
                     </a>
                     <a href="https://mintic.gov.co/" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-mintic-full.png" alt="">
+                        <img src="/assets/images/institucional/logo-mintic-full.png" width="900" height="232" decoding="async" alt="">
                     </a>
                     <a href="https://www.seduca.gov.co" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-seduca.png" alt="">
+                        <img src="/assets/images/institucional/logo-seduca.png" width="293" height="129" decoding="async" alt="">
                     </a>
                     <a href="https://www.antioquia.gov.co/" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-gobernacion-antioquia.png" alt="">
+                        <img src="/assets/images/institucional/logo-gobernacion-antioquia.png" width="1406" height="384" decoding="async" alt="">
                     </a>
                     <a href="https://mintic.gov.co/" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-mintic-full.png" alt="">
+                        <img src="/assets/images/institucional/logo-mintic-full.png" width="900" height="232" decoding="async" alt="">
                     </a>
                     <a href="https://www.seduca.gov.co" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-seduca.png" alt="">
+                        <img src="/assets/images/institucional/logo-seduca.png" width="293" height="129" decoding="async" alt="">
                     </a>
                     <a href="https://www.antioquia.gov.co/" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-gobernacion-antioquia.png" alt="">
+                        <img src="/assets/images/institucional/logo-gobernacion-antioquia.png" width="1406" height="384" decoding="async" alt="">
                     </a>
                     <a href="https://mintic.gov.co/" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-mintic-full.png" alt="">
+                        <img src="/assets/images/institucional/logo-mintic-full.png" width="900" height="232" decoding="async" alt="">
                     </a>
                     <a href="https://www.seduca.gov.co" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-seduca.png" alt="">
+                        <img src="/assets/images/institucional/logo-seduca.png" width="293" height="129" decoding="async" alt="">
                     </a>
 
                     <!-- Segunda mitad: duplicado exacto de la primera, para el
@@ -405,63 +409,63 @@
                          (no eliminar). -->
                     <a href="https://www.antioquia.gov.co/" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-gobernacion-antioquia.png" alt="">
+                        <img src="/assets/images/institucional/logo-gobernacion-antioquia.png" width="1406" height="384" decoding="async" alt="">
                     </a>
                     <a href="https://mintic.gov.co/" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-mintic-full.png" alt="">
+                        <img src="/assets/images/institucional/logo-mintic-full.png" width="900" height="232" decoding="async" alt="">
                     </a>
                     <a href="https://www.seduca.gov.co" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-seduca.png" alt="">
+                        <img src="/assets/images/institucional/logo-seduca.png" width="293" height="129" decoding="async" alt="">
                     </a>
                     <a href="https://www.antioquia.gov.co/" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-gobernacion-antioquia.png" alt="">
+                        <img src="/assets/images/institucional/logo-gobernacion-antioquia.png" width="1406" height="384" decoding="async" alt="">
                     </a>
                     <a href="https://mintic.gov.co/" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-mintic-full.png" alt="">
+                        <img src="/assets/images/institucional/logo-mintic-full.png" width="900" height="232" decoding="async" alt="">
                     </a>
                     <a href="https://www.seduca.gov.co" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-seduca.png" alt="">
+                        <img src="/assets/images/institucional/logo-seduca.png" width="293" height="129" decoding="async" alt="">
                     </a>
                     <a href="https://www.antioquia.gov.co/" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-gobernacion-antioquia.png" alt="">
+                        <img src="/assets/images/institucional/logo-gobernacion-antioquia.png" width="1406" height="384" decoding="async" alt="">
                     </a>
                     <a href="https://mintic.gov.co/" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-mintic-full.png" alt="">
+                        <img src="/assets/images/institucional/logo-mintic-full.png" width="900" height="232" decoding="async" alt="">
                     </a>
                     <a href="https://www.seduca.gov.co" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-seduca.png" alt="">
+                        <img src="/assets/images/institucional/logo-seduca.png" width="293" height="129" decoding="async" alt="">
                     </a>
                     <a href="https://www.antioquia.gov.co/" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-gobernacion-antioquia.png" alt="">
+                        <img src="/assets/images/institucional/logo-gobernacion-antioquia.png" width="1406" height="384" decoding="async" alt="">
                     </a>
                     <a href="https://mintic.gov.co/" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-mintic-full.png" alt="">
+                        <img src="/assets/images/institucional/logo-mintic-full.png" width="900" height="232" decoding="async" alt="">
                     </a>
                     <a href="https://www.seduca.gov.co" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-seduca.png" alt="">
+                        <img src="/assets/images/institucional/logo-seduca.png" width="293" height="129" decoding="async" alt="">
                     </a>
                     <a href="https://www.antioquia.gov.co/" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-gobernacion-antioquia.png" alt="">
+                        <img src="/assets/images/institucional/logo-gobernacion-antioquia.png" width="1406" height="384" decoding="async" alt="">
                     </a>
                     <a href="https://mintic.gov.co/" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-mintic-full.png" alt="">
+                        <img src="/assets/images/institucional/logo-mintic-full.png" width="900" height="232" decoding="async" alt="">
                     </a>
                     <a href="https://www.seduca.gov.co" target="_blank" rel="noopener" aria-hidden="true"
                         tabindex="-1">
-                        <img src="/assets/images/institucional/logo-seduca.png" alt="">
+                        <img src="/assets/images/institucional/logo-seduca.png" width="293" height="129" decoding="async" alt="">
                     </a>
                 </div>
             </div>
@@ -480,7 +484,6 @@
 
     <div id="site-footer-mount"></div>
 
-    <script src="/js/layout.js"></script>
     <script src="/js/navigation.js"></script>
     <script type="module" src="/js/home.js"></script>
 </body>

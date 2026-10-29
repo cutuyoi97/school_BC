@@ -12,38 +12,41 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Contáctanos — Institución Educativa Rural Buchadó Fernando Botero Angulo">
     <meta property="og:description" content="Escríbenos y con gusto resolveremos tus dudas.">
-    <meta property="og:image" content="/assets/images/logo/logo-buchado.png">
+    <meta property="og:image" content="https://www.iebfba.edu.co/assets/images/logo/logo-buchado.png">
     <meta property="og:url" content="https://www.iebfba.edu.co/contacto">
 
-    <link rel="icon" type="image/png" href="/assets/images/logo/logo-buchado.png">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/logo/logo-buchado-192.png">
+    <link rel="apple-touch-icon" href="/assets/images/logo/apple-touch-icon.png">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Mukta:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preload" href="/assets/fonts/mukta/mukta-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/kanit/kanit-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/font-awesome/fontawesome-webfont.woff2?v=4.7.0" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/components.css">
     <link rel="stylesheet" href="/css/contacto.css">
 </head>
 
-<body>
-    <script>window.CURRENT_PAGE = "contacto";</script>
+<body data-page="contacto">
     <div id="site-header-mount"></div>
     <div id="mobile-nav-mount"></div>
+    <!-- Síncrono y antes del contenido: el encabezado existe desde el primer pintado (sin CLS). -->
+    <script src="/js/layout.js"></script>
 
     <main id="main-content">
         <section class="contact-hero">
             <div class="container">
                 <div class="contact-hero-text">
-                    <span class="eyebrow">Contáctanos</span>
-                    <h1>Un espacio dedicado a la formación integral de niños y jóvenes</h1>
+                    <span class="eyebrow">Atención a la comunidad educativa</span>
+                    <h1>Contáctanos</h1>
                     <p>Envíanos un mensaje y daremos respuesta a tu pregunta lo más pronto posible.</p>
+                    <!-- Pendiente institucional: teléfono oficial. No publicar números provisionales. -->
                     <p class="contact-phone">
                         <i class="fa fa-phone" aria-hidden="true"></i>
-                        (604) 123 4567
+                        Línea telefónica institucional disponible próximamente
                     </p>
                 </div>
             </div>
@@ -53,44 +56,46 @@
             <div class="card contact-form-card">
                 <h2 class="sr-only">Formulario de contacto</h2>
                 <form id="contactForm" novalidate>
+                    <p class="form-required-note">Los campos marcados con <span aria-hidden="true">*</span> son obligatorios.</p>
                     <div class="form-field">
-                        <label for="name">Nombre completo</label>
+                        <label for="name">Nombre completo <span class="required-mark" aria-hidden="true">*</span></label>
                         <div class="input-icon">
                             <i class="fa fa-user" aria-hidden="true"></i>
                             <input type="text" id="name" name="name" placeholder="Tu nombre completo" required
-                                maxlength="100" autocomplete="name">
+                                maxlength="100" autocomplete="name" aria-describedby="name-error">
                         </div>
-                        <span class="field-error" role="alert"></span>
+                        <span class="field-error" id="name-error"></span>
                     </div>
 
                     <div class="form-field">
-                        <label for="email">Correo electrónico</label>
+                        <label for="email">Correo electrónico <span class="required-mark" aria-hidden="true">*</span></label>
                         <div class="input-icon">
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                             <input type="email" id="email" name="email" placeholder="tu@correo.com" required
-                                maxlength="200" autocomplete="email">
+                                maxlength="200" autocomplete="email" aria-describedby="email-error">
                         </div>
-                        <span class="field-error" role="alert"></span>
+                        <span class="field-error" id="email-error"></span>
                     </div>
 
                     <div class="form-field">
-                        <label for="subject">Asunto</label>
+                        <label for="subject">Asunto <span class="required-mark" aria-hidden="true">*</span></label>
                         <div class="input-icon">
                             <i class="fa fa-tag" aria-hidden="true"></i>
                             <input type="text" id="subject" name="subject" placeholder="¿En qué podemos ayudarte?"
-                                required maxlength="150">
+                                required maxlength="150" aria-describedby="subject-error">
                         </div>
-                        <span class="field-error" role="alert"></span>
+                        <span class="field-error" id="subject-error"></span>
                     </div>
 
                     <div class="form-field">
-                        <label for="message">Mensaje</label>
+                        <label for="message">Mensaje <span class="required-mark" aria-hidden="true">*</span></label>
                         <div class="input-icon input-icon-textarea">
                             <i class="fa fa-comment" aria-hidden="true"></i>
                             <textarea id="message" name="message" placeholder="Escribe tu mensaje" required
-                                maxlength="2000"></textarea>
+                                maxlength="2000" aria-describedby="message-hint message-error"></textarea>
                         </div>
-                        <span class="field-error" role="alert"></span>
+                        <span class="field-hint" id="message-hint">Máximo 2000 caracteres · <span id="messageCount">0</span>/2000</span>
+                        <span class="field-error" id="message-error"></span>
                     </div>
 
                     <!-- Honeypot anti-spam: oculto para personas, visible para bots -->
@@ -106,12 +111,14 @@
 
                     <p class="contact-privacy-note">
                         La Institución Educativa Rural Buchadó Fernando Botero Angulo utiliza la información
-                        suministrada para brindar información relevante de la institución. Revisa nuestra
-                        <a href="#">política de privacidad</a>.
+                        suministrada para brindar información relevante de la institución. La política de
+                        tratamiento de datos personales se publicará próximamente en este sitio.
                     </p>
                 </form>
             </div>
 
+            <!-- Pendiente institucional: correos oficiales de secretaría, coordinación y rectoría.
+                 Los correos provisionales (@buchado.edu.co) no existen; no publicarlos ni enlazarlos. -->
             <div class="contact-info-list" id="canales">
                 <div class="card contact-card">
                     <div class="contact-icon">
@@ -119,7 +126,7 @@
                     </div>
                     <div>
                         <h3>Secretaría</h3>
-                        <p>secretaria@buchado.edu.co</p>
+                        <p class="contact-pending">Correo oficial disponible próximamente</p>
                         <small>Atención administrativa y matrículas.</small>
                     </div>
                 </div>
@@ -130,7 +137,7 @@
                     </div>
                     <div>
                         <h3>Coordinación</h3>
-                        <p>coordinacion@buchado.edu.co</p>
+                        <p class="contact-pending">Correo oficial disponible próximamente</p>
                         <small>Casos académicos y convivencia.</small>
                     </div>
                 </div>
@@ -141,7 +148,7 @@
                     </div>
                     <div>
                         <h3>Rectoría</h3>
-                        <p>rectoria@buchado.edu.co</p>
+                        <p class="contact-pending">Correo oficial disponible próximamente</p>
                         <small>Solicitudes institucionales.</small>
                     </div>
                 </div>
@@ -202,7 +209,6 @@
 
     <div id="site-footer-mount"></div>
 
-    <script src="/js/layout.js"></script>
     <script src="/js/navigation.js"></script>
     <script src="/js/contact.js"></script>
 </body>

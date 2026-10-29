@@ -12,7 +12,17 @@
     color: #fff;
     background:
         linear-gradient(rgba(0, 35, 71, .8), rgba(0, 35, 71, .8)),
-        url("/assets/images/sedes/sede-principal-patio.jpg") center/cover;
+        url("/assets/images/sedes/sede-principal-patio-1200.webp") center/cover;
+}
+
+/* Imagen de fondo (elemento LCP): WebP de 800 px en pantallas pequeñas.
+   Debe coincidir con los <link rel="preload"> de identidad.html. */
+@media (max-width: 800px) {
+    .identity-banner {
+        background:
+            linear-gradient(rgba(0, 35, 71, .8), rgba(0, 35, 71, .8)),
+            url("/assets/images/sedes/sede-principal-patio-800.webp") center/cover;
+    }
 }
 
 .identity-banner .container {
@@ -461,8 +471,12 @@
     padding-top: 18px;
 }
 
-.rector-signature h4 {
+/* Firma del mensaje: no es un encabezado (antes <h4>, saltaba de H2 a H4). */
+.rector-signature .rector-name {
     margin: 0;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.25;
     color: var(--color-primary);
 }
 

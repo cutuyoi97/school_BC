@@ -52,7 +52,7 @@
 }
 
 .contact-hero-text p {
-    color: rgba(255, 255, 255, .9);
+    color: #fff; /* blanco pleno: el degradado claro exige 4,5:1 */
 }
 
 .contact-hero-text .contact-phone {
@@ -124,7 +124,8 @@
 .contact-form-card textarea {
     width: 100%;
     padding: 15px 20px 15px 46px;
-    border: 2px solid var(--color-border);
+    /* #8a94a1: borde con 3:1 sobre blanco para identificar el campo (WCAG 1.4.11). */
+    border: 2px solid #8a94a1;
     border-radius: 14px;
     font-size: 15px;
     font-family: inherit;
@@ -160,6 +161,29 @@
     font-size: .82rem;
     margin-top: var(--space-2);
     margin-bottom: 0;
+}
+
+.form-required-note {
+    font-size: .85rem;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-2);
+}
+
+.required-mark {
+    color: var(--color-danger);
+}
+
+.field-hint {
+    display: block;
+    margin-top: 6px;
+    font-size: .8rem;
+    color: var(--color-text-muted);
+}
+
+/* Canales cuyo dato oficial aún no entrega la institución. */
+.contact-card p.contact-pending {
+    color: var(--color-text-muted);
+    font-weight: 600;
 }
 
 /*----- Tarjetas de contacto -----*/

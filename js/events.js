@@ -79,7 +79,7 @@ function openLightbox(trigger) {
 function closeLightbox() {
     if (!lightbox) return;
     lightbox.hidden = true;
-    lightboxImage.src = "";
+    lightboxImage.removeAttribute("src");
     document.body.style.overflow = "";
     lastFocusedTrigger?.focus();
 }

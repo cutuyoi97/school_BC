@@ -19,9 +19,12 @@
     --color-primary-light: #3399ff;
     --color-primary-gradient: linear-gradient(145deg, #002347, #3399ff);
     --color-accent: #157347;
-    --color-accent-gradient: linear-gradient(135deg, #22b573, #0f5c38);
-    --color-secondary: #2f9e5c;
-    --color-secondary-gradient: linear-gradient(135deg, #3ab068, #1f7a4d);
+    /* Inicio #178553 (antes #22b573, 2,65:1): texto blanco de botones ≥ 4,5:1. */
+    --color-accent-gradient: linear-gradient(135deg, #178553, #0f5c38);
+    /* #23804a: mismo verde, oscurecido para 4,9:1 sobre blanco (WCAG 1.4.3). Antes #2f9e5c (3,4:1). */
+    --color-secondary: #23804a;
+    /* Inicio #26844f (antes #3ab068, 2,8:1): el texto blanco sobre el degradado llega a 4,5:1. */
+    --color-secondary-gradient: linear-gradient(135deg, #26844f, #1f7a4d);
 
     --color-text: #1a1a1a;
     --color-text-muted: #5b6672;
@@ -128,6 +131,9 @@ figure {
 
 img {
     max-width: 100%;
+    /* Con width/height en el HTML (reservan espacio y evitan CLS), height:auto
+       conserva la proporción real cuando el CSS solo fija el ancho. */
+    height: auto;
     display: block;
 }
 

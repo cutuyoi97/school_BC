@@ -13,7 +13,17 @@
     overflow: hidden;
     background:
         linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .68)),
-        url("/assets/images/comunidad/estudiantes-flores.jpg") center 30%/cover no-repeat;
+        url("/assets/images/comunidad/estudiantes-flores-1200.webp") center 30%/cover no-repeat;
+}
+
+/* Imagen de fondo (elemento LCP): WebP de 800 px en pantallas pequeñas.
+   Debe coincidir con los <link rel="preload"> de eventos.html. */
+@media (max-width: 800px) {
+    .events-banner {
+        background:
+            linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .68)),
+            url("/assets/images/comunidad/estudiantes-flores-800.webp") center 30%/cover no-repeat;
+    }
 }
 
 .events-banner .container {

@@ -24,14 +24,19 @@ buchado-colegio/
 │   ├── eventos.html        → Eventos y Centros de Interés
 │   ├── academica.html      → Información Académica e Institucional (PEI, Básica Primaria, calendario, matrícula, SEDUCA)
 │   └── contacto.html       → Contacto (formulario, canales, dependencias)
+├── 404.html                → Página de error para rutas inexistentes (Vercel la sirve con estado 404)
+├── favicon.ico
 ├── assets/
+│   ├── fonts/               → Kanit, Mukta (latin/latin-ext) y Font Awesome 4.7.0 alojadas localmente
 │   ├── images/
 │   │   ├── logo/            → Logo y escudo institucional
 │   │   ├── institucional/   → Logos de aliados
-│   │   ├── sedes/           → Fotografías reales de las tres sedes
-│   │   └── comunidad/       → Fotografías reales de estudiantes y actividades
+│   │   ├── sedes/           → Fotografías reales de las tres sedes (JPEG original + variantes WebP *-480/800/1200/1600)
+│   │   └── comunidad/       → Fotografías reales de estudiantes y actividades (ídem)
 │   └── icons/               → Iconos propios (ícono de teléfono, etc.)
 ├── css/
+│   ├── fonts.css            → @font-face de Kanit y Mukta (locales, font-display: swap)
+│   ├── font-awesome.min.css → Font Awesome 4.7.0 con rutas locales
 │   ├── base.css             → Reset, variables de diseño, tipografía, utilidades
 │   ├── components.css       → Navbar, submenús, menú móvil, footer, botones, tarjetas, formularios
 │   ├── home.css              → Estilos específicos de inicio
@@ -39,7 +44,8 @@ buchado-colegio/
 │   ├── docentes.css         → Estilos específicos de Personal Docente
 │   ├── eventos.css          → Estilos específicos de Eventos y Centros de Interés
 │   ├── academica.css        → Estilos específicos de Información Académica
-│   └── contacto.css         → Estilos específicos de Contacto
+│   ├── contacto.css         → Estilos específicos de Contacto
+│   └── error.css            → Página 404
 ├── js/
 │   ├── layout.js             → Header, menú móvil y footer compartidos (fuente única de verdad)
 │   ├── navigation.js        → Menú móvil, submenús, header fijo, barra de progreso
@@ -84,6 +90,19 @@ Las páginas se publican sin `.html` ni `/pages/`, configurado en `vercel.json`:
   ya las URLs limpias. Si se agrega una página nueva, hay que sumarla en los tres lugares.
 - Para probar estas reglas en local usa `vercel dev` (un servidor estático genérico no las aplica).
 
+### Cabeceras de seguridad y caché
+
+`vercel.json` también define `headers`: `X-Content-Type-Options`, `X-Frame-Options`,
+`Referrer-Policy`, `Permissions-Policy` y una `Content-Security-Policy-Report-Only`
+(todo el sitio se sirve desde el propio dominio; no hay scripts inline: cada página
+declara su identificador en `<body data-page="...">`). Para activar la CSP, renombra la
+cabecera a `Content-Security-Policy` después de verificar en un despliegue de vista
+previa que la consola no muestra violaciones. Caché: fuentes 1 año (inmutables),
+imágenes 7 días, CSS/JS 1 hora con revalidación; el HTML no se cachea.
+
+Si reemplazas una imagen o una fuente, usa un nombre de archivo nuevo para que los
+navegadores no sigan mostrando la versión anterior.
+
 El nombre oficial de la institución está centralizado en `js/layout.js`
 (constante `INSTITUTION_NAME_FULL`), usado en el
 header, el menú móvil y el footer de las seis páginas. Los `<title>` y
@@ -117,7 +136,11 @@ excluido en `.gitignore`).
 | ---------------------- | -------------------------------------------------------------- |
 | `RESEND_API_KEY`       | API key de tu cuenta de Resend (Dashboard → API Keys).         |
 | `CONTACT_TO_EMAIL`     | Correo que recibe los mensajes del formulario.                 |
-| `CONTACT_FROM_EMAIL`   | Remitente del correo; debe pertenecer a un dominio verificado en Resend, o usar `onboarding@resend.dev` mientras tanto. |
+| `CONTACT_FROM_EMAIL`   | Remitente del correo; debe pertenecer a un dominio verificado en Resend (`onboarding@resend.dev` solo entrega al dueño de la cuenta). |
+| `ALLOWED_ORIGINS`      | Opcional. Orígenes extra autorizados a usar el formulario, separados por comas (p. ej. `http://localhost:3000` con `vercel dev`). Producción y la URL de vista previa ya están permitidas. |
+
+Las tres primeras son **obligatorias**: si falta alguna, `/api/contact` responde 503 y
+no envía nada (no hay remitente ni destinatario por defecto).
 
 En producción, configura estas mismas variables en **Vercel → Project
 Settings → Environment Variables**.
@@ -135,6 +158,11 @@ honeypot en el servidor` → `Resend` → `correo`.
 - Incluye un campo honeypot oculto contra bots simples y un límite básico
   de solicitudes por IP (rate limiting best-effort; ver comentario en
   `api/contact.js` sobre sus límites en un entorno serverless).
+- Solo acepta `POST` con `Content-Type: application/json` desde los orígenes
+  autorizados (`Origin`); normaliza saltos de línea (CRLF) en nombre, correo
+  y asunto, y escapa el HTML del correo.
+- Para una protección real contra abuso, añade una regla de límite de tasa en
+  **Vercel Firewall** para `/api/contact` (no se puede declarar en `vercel.json`).
 
 ## Estado del proyecto / próximos pasos
 
