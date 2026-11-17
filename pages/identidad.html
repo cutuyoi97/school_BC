@@ -39,75 +39,90 @@
     <script src="/js/layout.js"></script>
 
     <main id="main-content">
-        <!-- BANNER -->
-        <section class="identity-banner">
-            <div class="container">
-                <h1>Formando ciudadanos con valores, conocimiento y compromiso</h1>
-                <p>Conoce la historia, misión, visión y principios que orientan nuestra institución educativa y el
-                    trabajo que realizamos día a día por nuestros estudiantes.</p>
+        <!-- ENCABEZADO VISUAL -->
+        <section class="identity-hero" aria-labelledby="identidad-title">
+            <div class="container identity-hero__grid">
+                <div class="identity-hero__text">
+                    <span class="hero-kicker">Institución Educativa Rural Buchadó Fernando Botero Angulo</span>
+                    <h1 id="identidad-title">Nuestra identidad</h1>
+                    <p class="hero-lead">Una historia que comenzó a construirse en 1920, una formación pensada para la
+                        vida y un sentido de pertenencia que une a toda la comunidad educativa de Buchadó.</p>
+
+                    <ul class="hero-facts" aria-label="Datos de la institución">
+                        <li><strong>1920</strong><span>Primeros cimientos</span></li>
+                        <li><strong>3</strong><span>Sedes educativas</span></li>
+                        <li><strong>«Educando para la vida»</strong><span>Nuestro lema</span></li>
+                    </ul>
+
+                    <nav class="identity-jump" aria-label="Secciones de esta página">
+                        <a href="#filosofia">Filosofía</a>
+                        <a href="#mision-vision">Misión y visión</a>
+                        <a href="#valores">Valores</a>
+                        <a href="#historia">Historia</a>
+                        <a href="#himno">Himno</a>
+                        <a href="#sedes">Sedes</a>
+                    </nav>
+                </div>
+
+                <figure class="identity-hero__emblem">
+                    <span class="emblem-ring emblem-ring--outer" aria-hidden="true"></span>
+                    <span class="emblem-ring emblem-ring--inner" aria-hidden="true"></span>
+                    <span class="emblem-dot emblem-dot--a" aria-hidden="true"></span>
+                    <span class="emblem-dot emblem-dot--b" aria-hidden="true"></span>
+                    <div class="emblem-plate">
+                        <img decoding="async" src="/assets/images/logo/escudo-colegio-300.webp" srcset="/assets/images/logo/escudo-colegio-300.webp 300w, /assets/images/logo/escudo-colegio-586.webp 586w" sizes="(max-width: 768px) 60vw, 280px" width="586" height="530" alt="Escudo institucional de la Institución Educativa Rural Buchadó Fernando Botero Angulo">
+                    </div>
+                </figure>
             </div>
+
+            <svg class="hero-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+                <path class="hero-wave__back" d="M0,36 C220,86 470,4 720,34 C970,64 1210,88 1440,36 L1440,80 L0,80 Z"></path>
+                <path class="hero-wave__front" d="M0,52 C240,16 480,74 720,50 C960,26 1200,70 1440,48 L1440,80 L0,80 Z"></path>
+            </svg>
         </section>
 
         <div id="institucional">
-            <!-- HISTORIA + TIMELINE -->
-            <section class="section">
-                <div class="container history">
-                    <figure>
-                        <img decoding="async" src="/assets/images/logo/escudo-colegio-300.webp" srcset="/assets/images/logo/escudo-colegio-300.webp 300w, /assets/images/logo/escudo-colegio-586.webp 586w" sizes="(max-width: 768px) 92vw, 586px" width="586" height="530" alt="Escudo institucional de la Institución Educativa Rural Buchadó Fernando Botero Angulo">
-                    </figure>
-                    <div class="history-content reveal">
-                        <span class="eyebrow">Nuestra historia</span>
-                        <h2>Más de una década formando generaciones</h2>
-                        <p>La institución educativa fue creada con el propósito de ofrecer educación integral a la
-                            comunidad, promoviendo el desarrollo académico, humano y social de cada estudiante.</p>
-
-                        <ol class="timeline">
-                            <li class="timeline-item">
-                                <span class="timeline-year">2010</span>
-                                <p>Fundación de la institución educativa y apertura de las primeras aulas.</p>
-                            </li>
-                            <li class="timeline-item">
-                                <span class="timeline-year">2014</span>
-                                <p>Expansión de la planta física y ampliación de la oferta educativa.</p>
-                            </li>
-                            <li class="timeline-item">
-                                <span class="timeline-year">2019</span>
-                                <p>Nuevos proyectos pedagógicos orientados al desarrollo de competencias del siglo
-                                    XXI.</p>
-                            </li>
-                            <li class="timeline-item">
-                                <span class="timeline-year">2026</span>
-                                <p>Actualidad: una comunidad educativa consolidada, innovando en sus procesos
-                                    formativos.</p>
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-            </section>
-
-            <!-- MISIÓN Y VISIÓN -->
-            <section class="section mission-vision">
-                <div class="container">
-                    <div class="section-header section-header--accent">
+            <!-- FILOSOFÍA INSTITUCIONAL -->
+            <section class="section philosophy" id="filosofia" aria-labelledby="filosofia-title">
+                <div class="container philosophy__grid">
+                    <div class="philosophy__intro reveal">
                         <span class="eyebrow">Filosofía institucional</span>
-                        <h2>Ciencia, libertad y trabajo — educando para la vida</h2>
+                        <h2 id="filosofia-title">Ciencia, libertad y trabajo — educando para la vida</h2>
+                        <ul class="pillars" aria-hidden="true">
+                            <li><i class="fa fa-flask"></i><span>Ciencia</span></li>
+                            <li><i class="fa fa-paper-plane-o"></i><span>Libertad</span></li>
+                            <li><i class="fa fa-briefcase"></i><span>Trabajo</span></li>
+                        </ul>
+                    </div>
+                    <div class="philosophy__body reveal">
+                        <i class="fa fa-quote-left philosophy__mark" aria-hidden="true"></i>
                         <p>
                             Orientamos nuestro accionar para que el estudiante dirija sus esfuerzos a la formación
                             permanente de su ser cultural, histórico y social, cultivando sus sentimientos,
                             costumbres, ideas y creencias en su medio social.
                         </p>
                     </div>
+                </div>
+            </section>
+
+            <!-- MISIÓN Y VISIÓN -->
+            <section class="section mission-vision" id="mision-vision" aria-labelledby="mision-vision-title">
+                <div class="container">
+                    <div class="section-header section-header--accent">
+                        <span class="eyebrow">Hacia dónde caminamos</span>
+                        <h2 id="mision-vision-title">Misión y visión</h2>
+                    </div>
 
                     <div class="info-cards">
-                        <article class="card info-card reveal">
-                            <i class="fa fa-bullseye" aria-hidden="true"></i>
+                        <article class="info-card info-card--mission reveal">
+                            <span class="info-card__icon" aria-hidden="true"><i class="fa fa-bullseye"></i></span>
                             <h3>Misión</h3>
                             <p>Formar integralmente al estudiante para que interactúe de forma activa, como agente
                                 transformador, capaz de contribuir al mejoramiento de la calidad de vida personal y
                                 social, de acuerdo con las exigencias y demandas de su entorno.</p>
                         </article>
-                        <article class="card info-card reveal">
-                            <i class="fa fa-eye" aria-hidden="true"></i>
+                        <article class="info-card info-card--vision reveal">
+                            <span class="info-card__icon" aria-hidden="true"><i class="fa fa-eye"></i></span>
                             <h3>Visión</h3>
                             <p>Ser reconocidos por nuestra acción formadora, que brinda educación de calidad al
                                 estudiante como agente de desarrollo personal, social y del entorno, capaz de
@@ -118,27 +133,30 @@
             </section>
 
             <!-- MODELO EDUCATIVO -->
-            <section class="section">
+            <section class="section" aria-labelledby="modelo-title">
                 <div class="container">
                     <div class="section-header section-header--accent">
                         <span class="eyebrow">Modelo educativo</span>
-                        <h2>Cómo aprendemos en la Institución Educativa Rural Buchadó Fernando Botero Angulo</h2>
+                        <h2 id="modelo-title">Cómo aprendemos en la Institución Educativa Rural Buchadó Fernando Botero Angulo</h2>
                     </div>
 
                     <div class="model-grid">
                         <article class="card model-card reveal">
+                            <span class="model-card__n" aria-hidden="true">01</span>
                             <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
                             <h3>Aprendizaje significativo</h3>
                             <p>Conectamos los contenidos académicos con la realidad y los intereses de cada
                                 estudiante.</p>
                         </article>
                         <article class="card model-card reveal">
+                            <span class="model-card__n" aria-hidden="true">02</span>
                             <i class="fa fa-heart" aria-hidden="true"></i>
                             <h3>Formación en valores</h3>
                             <p>La convivencia y el desarrollo humano son tan importantes como el desempeño
                                 académico.</p>
                         </article>
                         <article class="card model-card reveal">
+                            <span class="model-card__n" aria-hidden="true">03</span>
                             <i class="fa fa-users" aria-hidden="true"></i>
                             <h3>Acompañamiento cercano</h3>
                             <p>Docentes y familias trabajan juntos en el seguimiento del proceso de cada
@@ -269,6 +287,238 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- NUESTRA HISTORIA: LÍNEA DE TIEMPO -->
+        <section class="section history" id="historia" aria-labelledby="historia-title">
+            <div class="container">
+                <div class="section-header section-header--accent">
+                    <span class="eyebrow">Nuestra historia</span>
+                    <h2 id="historia-title">Breve historia de la institución educativa</h2>
+                    <p>El recorrido histórico de nuestro establecimiento educativo, desde sus primeros cimientos hasta
+                        su denominación actual.</p>
+                </div>
+
+                <div class="tl-wrap" data-timeline>
+                    <div class="tl-rail" aria-hidden="true"><span class="tl-rail__fill"></span></div>
+                    <ol class="tl">
+                        <li class="tl-item">
+                            <article class="tl-card">
+                                <time class="tl-date" datetime="1920">1920</time>
+                                <h3>Primeros cimientos</h3>
+                                <p>El recorrido histórico de nuestro establecimiento educativo empieza sus primeros
+                                    cimientos como Escuela Urbana Integrada.</p>
+                                <button type="button" class="tl-more" aria-expanded="false" aria-controls="tl-d1">
+                                    <span>Ver más detalle</span><i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                </button>
+                                <div class="tl-detail" id="tl-d1"><div><p>Buchadó era entonces corregimiento perteneciente al municipio de Urrao, hasta el año 1983.</p></div></div>
+                            </article>
+                            <span class="tl-marker" aria-hidden="true"><i class="fa fa-building-o"></i></span>
+                            <span class="tl-year" aria-hidden="true">1920</span>
+                        </li>
+
+                        <li class="tl-item">
+                            <article class="tl-card">
+                                <time class="tl-date" datetime="1983">1983</time>
+                                <h3>Cambio administrativo</h3>
+                                <p>Por Ordenanza de la Honorable Asamblea Departamental, Buchadó pasa a ser
+                                    corregimiento del nuevo municipio de Vigía del Fuerte.</p>
+                                <button type="button" class="tl-more" aria-expanded="false" aria-controls="tl-d2">
+                                    <span>Ver más detalle</span><i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                </button>
+                                <div class="tl-detail" id="tl-d2"><div><p>Hasta ese año, Buchadó había sido corregimiento perteneciente al municipio de Urrao.</p></div></div>
+                            </article>
+                            <span class="tl-marker" aria-hidden="true"><i class="fa fa-map-marker"></i></span>
+                            <span class="tl-year" aria-hidden="true">1983</span>
+                        </li>
+
+                        <li class="tl-item">
+                            <article class="tl-card">
+                                <time class="tl-date" datetime="1985-06-10">10 de junio de 1985</time>
+                                <h3>Inicio de la básica secundaria</h3>
+                                <p>Se da inicio al nivel de básica secundaria con la apertura del grado Sexto, siendo
+                                    pionero el docente <strong>Libardo San Martín Machado</strong> (q.e.p.d.).</p>
+                                <button type="button" class="tl-more" aria-expanded="false" aria-controls="tl-d3">
+                                    <span>Ver más detalle</span><i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                </button>
+                                <div class="tl-detail" id="tl-d3"><div><p>Le siguen Guillermo León Mosquera y Pastor Damián Perea Santos (q.e.p.d.).</p></div></div>
+                            </article>
+                            <span class="tl-marker" aria-hidden="true"><i class="fa fa-graduation-cap"></i></span>
+                            <span class="tl-year" aria-hidden="true">1985</span>
+                        </li>
+
+                        <li class="tl-item">
+                            <article class="tl-card">
+                                <time class="tl-date" datetime="1988-04-27">27 de abril de 1988</time>
+                                <h3>Creación de la Concentración Educativa</h3>
+                                <p>Se crea la Concentración Educativa Buchadó a través del Acuerdo 019.</p>
+                            </article>
+                            <span class="tl-marker" aria-hidden="true"><i class="fa fa-institution"></i></span>
+                            <span class="tl-year" aria-hidden="true">1988</span>
+                        </li>
+
+                        <li class="tl-item">
+                            <article class="tl-card">
+                                <time class="tl-date" datetime="2003-05-05">5 de mayo de 2003</time>
+                                <h3>Reconocimiento oficial</h3>
+                                <p>Mediante la Resolución Departamental 04021 se cambia la denominación del
+                                    establecimiento y se le concede reconocimiento de carácter oficial como Institución
+                                    Educativa Buchadó.</p>
+                                <button type="button" class="tl-more" aria-expanded="false" aria-controls="tl-d5">
+                                    <span>Ver más detalle</span><i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                </button>
+                                <div class="tl-detail" id="tl-d5"><div><p>Se le autoriza para ofrecer educación formal en los niveles de preescolar, básica primaria, básica secundaria y media académica.</p></div></div>
+                            </article>
+                            <span class="tl-marker" aria-hidden="true"><i class="fa fa-certificate"></i></span>
+                            <span class="tl-year" aria-hidden="true">2003</span>
+                        </li>
+
+                        <li class="tl-item">
+                            <article class="tl-card">
+                                <time class="tl-date" datetime="2014-05-07">7 de mayo de 2014</time>
+                                <h3>Reorganización institucional</h3>
+                                <p>Mediante la Resolución Departamental 037206 se reorganizan la Institución Educativa
+                                    Buchadó, el Centro Educativo Rural San Miguel y el Centro Educativo Rural Arenal,
+                                    constituyendo la Institución Educativa Rural Buchadó.</p>
+                                <button type="button" class="tl-more" aria-expanded="false" aria-controls="tl-d6">
+                                    <span>Ver más detalle</span><i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                </button>
+                                <div class="tl-detail" id="tl-d6"><div><p>Funciona en las plantas físicas ubicadas en el corregimiento Buchadó (sede principal), el corregimiento San Miguel y la vereda Arenal del municipio de Vigía del Fuerte.</p></div></div>
+                            </article>
+                            <span class="tl-marker" aria-hidden="true"><i class="fa fa-sitemap"></i></span>
+                            <span class="tl-year" aria-hidden="true">2014</span>
+                        </li>
+
+                        <li class="tl-item tl-item--now">
+                            <article class="tl-card">
+                                <span class="tl-date">Resolución 2023060352658</span>
+                                <h3>Denominación actual</h3>
+                                <p>Se modifica parcialmente el nombre de la Institución Educativa Rural Buchadó, que
+                                    pasa a denominarse <strong>Institución Educativa Rural Buchadó Fernando Botero
+                                    Angulo</strong>.</p>
+                                <button type="button" class="tl-more" aria-expanded="false" aria-controls="tl-d7">
+                                    <span>Ver más detalle</span><i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                </button>
+                                <div class="tl-detail" id="tl-d7"><div><p>Los demás artículos de la Resolución Departamental 037206 del 7 de mayo de 2014 quedan vigentes.</p></div></div>
+                            </article>
+                            <span class="tl-marker" aria-hidden="true"><i class="fa fa-flag"></i></span>
+                            <span class="tl-year" aria-hidden="true">Hoy</span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- NUESTRO HIMNO -->
+        <section class="section hymn" id="himno" aria-labelledby="himno-title">
+            <div class="hymn__glow" aria-hidden="true"></div>
+            <div class="container">
+                <div class="hymn-head">
+                    <span class="eyebrow">Himno institucional</span>
+                    <h2 id="himno-title">Nuestro himno</h2>
+                    <p>Recorre la letra estrofa por estrofa o consúltala completa.</p>
+                </div>
+
+                <div class="hymn-player" data-hymn data-audio-enabled="false" data-audio-src="/assets/audio/himno-institucional.mp3">
+                    <div class="hymn-wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+                    <div class="hymn-stage">
+                        <article class="stanza" aria-label="Estrofa I">
+                            <span class="stanza__num" aria-hidden="true">I</span>
+                            <p class="stanza__verses">
+                                <span class="verse">ES NUESTRO LEMA <span class="hl">EDUCAR PARA LA VIDA</span></span>
+                                <span class="verse">CON TRABAJO, CIENCIA Y LIBERTAD,</span>
+                                <span class="verse">PARA EL PROGRESO Y UN BUEN FUTURO</span>
+                                <span class="verse">DÍA TRAS DÍA PODER ALCANZAR.</span>
+                            </p>
+                        </article>
+                        <article class="stanza" aria-label="Estrofa II">
+                            <span class="stanza__num" aria-hidden="true">II</span>
+                            <p class="stanza__verses">
+                                <span class="verse">LA INSTITUCIÓN ESPERA DICHOSA</span>
+                                <span class="verse">PARA BRINDAR SU <span class="hl">INFINITO SABER</span></span>
+                                <span class="verse">JUVENTUD Y NIÑEZ ORGULLOSAS</span>
+                                <span class="verse">VISLUMBRANDO UN MEJOR RENACER</span>
+                            </p>
+                        </article>
+                        <article class="stanza" aria-label="Estrofa III">
+                            <span class="stanza__num" aria-hidden="true">III</span>
+                            <p class="stanza__verses">
+                                <span class="verse">CONVIVAMOS EN PLENA <span class="hl">ARMONÍA</span></span>
+                                <span class="verse">ALEJADOS DEL ODIO Y DEL MAL</span>
+                                <span class="verse">EL SEÑOR NOS ORIENTA, NOS GUÍA</span>
+                                <span class="verse">POR LA SENDA DE FE Y DE MORAL.</span>
+                            </p>
+                        </article>
+                        <article class="stanza" aria-label="Estrofa IV">
+                            <span class="stanza__num" aria-hidden="true">IV</span>
+                            <p class="stanza__verses">
+                                <span class="verse">EN <span class="hl">UNIDAD</span> CONSTRUIMOS LA OBRA</span>
+                                <span class="verse">HACIENDO ENTRE TODOS EL BIEN,</span>
+                                <span class="verse">CON PRINCIPIOS QUE ELEVAN LA HONRA,</span>
+                                <span class="verse">PRACTICANDO VALORES TAMBIÉN</span>
+                            </p>
+                        </article>
+                        <article class="stanza" aria-label="Estrofa V">
+                            <span class="stanza__num" aria-hidden="true">V</span>
+                            <p class="stanza__verses">
+                                <span class="verse">ENARBOLEMOS LA <span class="hl">AMADA BANDERA</span></span>
+                                <span class="verse">QUE NADIE NUNCA HA DE MANCILLAR,</span>
+                                <span class="verse">Y DE LA CIENCIA SERÁ LA CANTERA,</span>
+                                <span class="verse">COLEGIO AMADO, REMANSO DE PAZ.</span>
+                            </p>
+                        </article>
+                        <article class="stanza" aria-label="Estrofa VI">
+                            <span class="stanza__num" aria-hidden="true">VI</span>
+                            <p class="stanza__verses">
+                                <span class="verse"><span class="hl">GRATITUD</span> A ABNEGADOS MAESTROS</span>
+                                <span class="verse">QUE NUNCA DECAIGA EL FERVOR,</span>
+                                <span class="verse">EL DESEO POR SIEMPRE LATENTE</span>
+                                <span class="verse">DE ENCONTRAR UN MAÑANA MEJOR.</span>
+                            </p>
+                        </article>
+                    </div>
+
+                    <div class="hymn-controls">
+                        <button type="button" class="hymn-btn hymn-btn--nav" data-hymn-prev aria-label="Estrofa anterior">
+                            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                        </button>
+                        <div class="hymn-dots" role="group" aria-label="Elegir estrofa">
+                            <button type="button" data-hymn-dot="0" aria-label="Ir a la estrofa I"><span>I</span></button>
+                            <button type="button" data-hymn-dot="1" aria-label="Ir a la estrofa II"><span>II</span></button>
+                            <button type="button" data-hymn-dot="2" aria-label="Ir a la estrofa III"><span>III</span></button>
+                            <button type="button" data-hymn-dot="3" aria-label="Ir a la estrofa IV"><span>IV</span></button>
+                            <button type="button" data-hymn-dot="4" aria-label="Ir a la estrofa V"><span>V</span></button>
+                            <button type="button" data-hymn-dot="5" aria-label="Ir a la estrofa VI"><span>VI</span></button>
+                        </div>
+                        <button type="button" class="hymn-btn hymn-btn--nav" data-hymn-next aria-label="Estrofa siguiente">
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    <div class="hymn-progress">
+                        <div class="hymn-progress__track" aria-hidden="true"><span class="hymn-progress__fill"></span></div>
+                        <p class="hymn-progress__label" data-hymn-status>Estrofa I de VI</p>
+                    </div>
+
+                    <div class="hymn-actions">
+                        <button type="button" class="hymn-btn hymn-btn--pill" data-hymn-play aria-pressed="false">
+                            <i class="fa fa-play" aria-hidden="true"></i><span>Reproducir letra</span>
+                        </button>
+                        <button type="button" class="hymn-btn hymn-btn--pill hymn-btn--ghost" data-hymn-full aria-pressed="false">
+                            <i class="fa fa-list" aria-hidden="true"></i><span>Ver letra completa</span>
+                        </button>
+                    </div>
+
+                    <!-- Audio oficial (opcional): ver data-audio-* en .hymn-player. Sin archivo, permanece inactivo. -->
+                    <audio data-hymn-audio preload="none" hidden></audio>
+                </div>
+
+                <p class="hymn-credits">
+                    <span><i class="fa fa-pencil" aria-hidden="true"></i> Letra: Jorge Eliécer Mosquera Salas</span>
+                    <span><i class="fa fa-music" aria-hidden="true"></i> Música: Jenniel Asneiber Perea Escarpeta</span>
+                </p>
             </div>
         </section>
 
